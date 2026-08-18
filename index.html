@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mythic+ Score Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg: #0d0b14;
+    --surface: #171320;
+    --surface-2: #1f1a2c;
+    --line: #2a2438;
+    --text: #ede9f7;
+    --text-muted: #8f88a6;
+    --gold: #e8b64f;
+    --purple: #a873ff;
+    --radius: 14px;
+  }
+  *{ box-sizing:border-box; }
+  html,body{
+    margin:0; padding:0; background:var(--bg); color:var(--text);
+    font-family:'Inter',sans-serif;
+    min-height:100vh;
+  }
+  body{
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(168,115,255,0.10), transparent 45%),
+      radial-gradient(circle at 85% 85%, rgba(232,182,79,0.08), transparent 45%);
+  }
+  .wrap{ max-width: 920px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  header{ margin-bottom: 40px; }
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--purple); margin: 0 0 10px;
+  }
+  h1{
+    font-family:'Cinzel', serif; font-weight:700;
+    font-size: clamp(28px, 4.5vw, 40px);
+    margin: 0 0 8px; letter-spacing: 0.01em;
+  }
+  .sub{ color: var(--text-muted); font-size: 15px; margin:0; }
+
+  .stat-row{
+    display:grid; grid-template-columns: repeat(3, 1fr); gap:16px;
+    margin: 32px 0 40px;
+  }
+  @media (max-width: 640px){ .stat-row{ grid-template-columns: 1fr; } }
+  .stat{
+    background: var(--surface); border:1px solid var(--line); border-radius: var(--radius);
+    padding: 20px 22px;
+  }
+  .stat .label{
+    font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.1em;
+    text-transform:uppercase; color: var(--text-muted); margin-bottom: 10px;
+  }
+  .stat .value{ font-size: 30px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .stat.score .value{ color: var(--gold); }
+  .stat.cutoff .value{ color: var(--purple); }
+  .stat.gap .value{ color: var(--text); }
+  .stat .caption{ margin-top:6px; font-size:13px; color:var(--text-muted); }
+
+  .meter{
+    position:relative; height: 14px; border-radius: 999px;
+    background: var(--surface-2); border:1px solid var(--line);
+    margin-top: 14px; overflow:hidden;
+  }
+  .meter .fill{
+    position:absolute; top:0; left:0; bottom:0;
+    background: linear-gradient(90deg, #6b4fa0, var(--gold));
+    border-radius: 999px 0 0 999px;
+    transition: width 0.6s ease;
+  }
+  .meter .marker{
+    position:absolute; top:-4px; bottom:-4px; width:2px; background: var(--purple);
+  }
+
+  .panel{
+    background: var(--surface); border:1px solid var(--line); border-radius: var(--radius);
+    padding: 24px; margin-bottom: 24px;
+  }
+  .panel h2{
+    font-family:'Cinzel', serif; font-size:16px; margin: 0 0 18px; font-weight:600;
+    color: var(--text);
+  }
+  canvas{ max-height: 360px; }
+
+  .empty{
+    text-align:center; padding: 60px 20px; color: var(--text-muted);
+  }
+  .empty .glyph{ font-size: 32px; margin-bottom: 12px; }
+
+  .companion-row{
+    display:grid; grid-template-columns: 160px 1fr 48px;
+    align-items:center; gap:14px; padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .companion-row:last-child{ border-bottom:none; }
+  .companion-row .name{ font-weight:600; }
+  .companion-row .name .realm{ font-weight:400; color:var(--text-muted); font-size:12px; }
+  .companion-row .bar-track{
+    height: 8px; border-radius: 999px; background: var(--surface-2);
+    border: 1px solid var(--line); overflow:hidden;
+  }
+  .companion-row .bar-fill{
+    height:100%; background: linear-gradient(90deg, #6b4fa0, var(--gold));
+  }
+  .companion-row .count{
+    text-align:right; font-family:'JetBrains Mono', monospace; color: var(--text-muted);
+  }
+  .caption{ color: var(--text-muted); font-size: 13px; }
+
+  footer{ margin-top: 32px; color: var(--text-muted); font-size: 12px; text-align:center; }
+  footer a{ color: var(--purple); text-decoration: none; }
+  footer a:hover{ text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="eyebrow">Mythic+ Progress</p>
+      <h1>Score vs. Title Cutoff</h1>
+      <p class="sub" id="subtitle">Loading character data…</p>
+    </header>
+
+    <div class="stat-row" id="statRow" style="display:none;">
+      <div class="stat score">
+        <div class="label">Current Score</div>
+        <div class="value" id="statScore">—</div>
+      </div>
+      <div class="stat cutoff">
+        <div class="label">Title Cutoff</div>
+        <div class="value" id="statCutoff">—</div>
+      </div>
+      <div class="stat gap">
+        <div class="label">Gap to Title</div>
+        <div class="value" id="statGap">—</div>
+        <div class="caption" id="statGapCaption"></div>
+        <div class="meter"><div class="fill" id="meterFill"></div></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>History</h2>
+      <div id="chartHolder">
+        <canvas id="chart"></canvas>
+      </div>
+      <div class="empty" id="emptyState" style="display:none;">
+        <div class="glyph">⌁</div>
+        No data points yet. Once the daily fetch runs at least once, the chart will populate here.
+      </div>
+    </div>
+
+    <div class="panel" id="companionsPanel" style="display:none;">
+      <h2>Who he actually plays with</h2>
+      <div id="companionsList"></div>
+      <p class="caption" id="companionsCaption" style="margin-top:14px;"></p>
+    </div>
+
+    <footer>
+      Data from the <a href="https://raider.io" target="_blank" rel="noopener">Raider.IO</a> public API · updated automatically
+    </footer>
+  </div>
+
+<script>
+// Character whose runs we're tracking — excluded from the companions list
+// since we only care about who's alongside him, not himself.
+const TRACKED_CHARACTER_NAME = 'Doodypoop';
+
+async function loadJson(path){
+  try{
+    const res = await fetch(path, { cache: 'no-store' });
+    return await res.json();
+  }catch(e){
+    console.error('Failed to load', path, e);
+    return [];
+  }
+}
+
+function renderCompanions(runs){
+  const panel = document.getElementById('companionsPanel');
+  if(!runs || runs.length === 0) return;
+
+  const counts = new Map(); // key "Name-Realm" -> { name, realm, count }
+  for(const run of runs){
+    for(const member of (run.roster || [])){
+      if(!member.name) continue;
+      if(member.name.toLowerCase() === TRACKED_CHARACTER_NAME.toLowerCase()) continue;
+      const key = `${member.name}-${member.realm}`;
+      const existing = counts.get(key);
+      if(existing){ existing.count++; }
+      else{ counts.set(key, { name: member.name, realm: member.realm, count: 1 }); }
+    }
+  }
+
+  const sorted = [...counts.values()].sort((a,b) => b.count - a.count).slice(0, 10);
+  if(sorted.length === 0) return;
+
+  const maxCount = sorted[0].count;
+  const listEl = document.getElementById('companionsList');
+  listEl.innerHTML = sorted.map(p => `
+    <div class="companion-row">
+      <div class="name">${p.name}<div class="realm">${p.realm || ''}</div></div>
+      <div class="bar-track"><div class="bar-fill" style="width:${(p.count / maxCount) * 100}%"></div></div>
+      <div class="count">${p.count}</div>
+    </div>
+  `).join('');
+
+  document.getElementById('companionsCaption').textContent =
+    `Based on the last ${runs.length} tracked runs. Top row = most frequent teammate.`;
+
+  panel.style.display = 'block';
+}
+
+async function main(){
+  const [data, runs] = await Promise.all([
+    loadJson('data/score-history.json'),
+    loadJson('data/runs.json'),
+  ]);
+
+  const subtitle = document.getElementById('subtitle');
+
+  if(!data || data.length === 0){
+    subtitle.textContent = 'No data yet — waiting on the first scheduled fetch.';
+    document.getElementById('emptyState').style.display = 'block';
+    document.getElementById('chart').style.display = 'none';
+    return;
+  }
+
+  renderCompanions(runs);
+
+  const latest = data[data.length - 1];
+  const latestLabel = new Date(latest.timestamp).toLocaleString(undefined, {
+    month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'
+  });
+  subtitle.textContent = `Last updated ${latestLabel}`;
+
+  document.getElementById('statRow').style.display = 'grid';
+  document.getElementById('statScore').textContent = latest.score.toLocaleString();
+  document.getElementById('statCutoff').textContent = latest.cutoff.toLocaleString();
+
+  const gap = latest.cutoff - latest.score;
+  const gapEl = document.getElementById('statGap');
+  const captionEl = document.getElementById('statGapCaption');
+  if(gap > 0){
+    gapEl.textContent = gap.toLocaleString();
+    captionEl.textContent = 'points needed to reach cutoff';
+  } else {
+    gapEl.textContent = Math.abs(gap).toLocaleString();
+    gapEl.style.color = '#7be0a8';
+    captionEl.textContent = 'points above cutoff — title secured 🎉';
+  }
+
+  const pct = Math.max(0, Math.min(100, (latest.score / latest.cutoff) * 100));
+  document.getElementById('meterFill').style.width = pct + '%';
+
+  const ctx = document.getElementById('chart').getContext('2d');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: data.map(d => new Date(d.timestamp).toLocaleString(undefined, {
+        month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'
+      })),
+      datasets: [
+        {
+          label: 'Score',
+          data: data.map(d => d.score),
+          borderColor: '#e8b64f',
+          backgroundColor: 'rgba(232,182,79,0.12)',
+          fill: true,
+          tension: 0.3,
+          pointRadius: 3,
+          pointBackgroundColor: '#e8b64f',
+        },
+        {
+          label: 'Title Cutoff',
+          data: data.map(d => d.cutoff),
+          borderColor: '#a873ff',
+          borderDash: [6, 4],
+          backgroundColor: 'transparent',
+          fill: false,
+          tension: 0.3,
+          pointRadius: 2,
+          pointBackgroundColor: '#a873ff',
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          labels: { color: '#ede9f7', font: { family: 'Inter' } }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: '#2a2438' },
+          ticks: { color: '#8f88a6' }
+        },
+        y: {
+          grid: { color: '#2a2438' },
+          ticks: { color: '#8f88a6' }
+        }
+      }
+    }
+  });
+}
+
+main();
+</script>
+</body>
+</html>
