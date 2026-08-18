@@ -1,1 +1,24 @@
-- cron: "0 6,12,18,23 * * *"
+name: Update Data
+
+on:
+  schedule:
+  - cron: "0 6,12,18,23 * * *"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Uses Node 20 (LTS)
+
+      - name: Install npm dependencies
+        run: npm install
+
+      - name: Run updater script
+        run: node fetch-data.mjs
+  
