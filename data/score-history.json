@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "characterId": "us-mal-ganis-bawolstank",
+    "character": "Bawolstank",
+    "realm": "Mal'Ganis",
+    "region": "us",
+    "date": "2026-08-18",
+    "timestamp": "2026-08-18T18:04:07.934Z",
+    "score": 400,
+    "cutoff": null
+  },
+  {
+    "characterId": "us-mal-ganis-doodypoop",
+    "character": "Doodypoop",
+    "realm": "Mal'Ganis",
+    "region": "us",
+    "date": "2026-08-18",
+    "timestamp": "2026-08-18T18:04:07.934Z",
+    "score": 0,
+    "cutoff": null
+  },
+  {
+    "characterId": "us-mal-ganis-doodypoopy",
+    "character": "Doodypoopy",
+    "realm": "Mal'Ganis",
+    "region": "us",
+    "date": "2026-08-18",
+    "timestamp": "2026-08-18T18:04:07.934Z",
+    "score": 0,
+    "cutoff": null
+  },
+  {
+    "characterId": "us-mal-ganis-klittaurus",
+    "character": "Klittaurus",
+    "realm": "Mal'Ganis",
+    "region": "us",
+    "date": "2026-08-18",
+    "timestamp": "2026-08-18T18:04:07.934Z",
+    "score": 0,
+    "cutoff": null
+  }
+]
