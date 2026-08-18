@@ -5,9 +5,8 @@
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-08-18",
-    "timestamp": "2026-08-18T18:29:29.783Z",
-    "score": 400,
-    "cutoff": 170
+    "timestamp": "2026-08-18T23:16:23.406Z",
+    "score": 1557.5
   },
   {
     "characterId": "us-mal-ganis-doodypoop",
@@ -15,9 +14,8 @@
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-08-18",
-    "timestamp": "2026-08-18T18:29:29.783Z",
-    "score": 0,
-    "cutoff": 170
+    "timestamp": "2026-08-18T23:16:23.406Z",
+    "score": 0
   },
   {
     "characterId": "us-mal-ganis-doodypoopy",
@@ -25,9 +23,8 @@
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-08-18",
-    "timestamp": "2026-08-18T18:29:29.783Z",
-    "score": 0,
-    "cutoff": 170
+    "timestamp": "2026-08-18T23:16:23.406Z",
+    "score": 0
   },
   {
     "characterId": "us-mal-ganis-klittaurus",
@@ -35,8 +32,7 @@
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-08-18",
-    "timestamp": "2026-08-18T18:29:29.783Z",
-    "score": 0,
-    "cutoff": 170
+    "timestamp": "2026-08-18T23:16:23.406Z",
+    "score": 337.1
   }
 ]
