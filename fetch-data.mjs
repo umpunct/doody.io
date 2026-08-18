@@ -1,174 +1,350 @@
-// fetch-data.mjs
-//
-// Fetches a character's current Mythic+ score, the region's current season
-// title cutoff, and their 10 most recent runs from the raider.io public API.
-//
-// - Appends a timestamped score/cutoff point to data/score-history.json
-// - Merges any new runs (de-duplicated by run id) into data/runs.json,
-//   including who else was in each group — this is what powers the
-//   "who does he actually play with" tracking.
-//
-// Docs: https://raider.io/api
-// Rate limit: 200+ requests/minute unauthenticated — running this a few
-// times an hour is nowhere close to a concern.
-//
-// Run locally with:  node fetch-data.mjs
-// Requires Node 18+ (built-in fetch). GitHub Actions runners already have this.
-
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 
-// ---- CONFIG: edit these for your friend's character ----------------------
-const REGION = "us";          // us, eu, kr, tw, cn
-const REALM = "mal-ganis";    // realm slug, spaces/apostrophes stripped, lowercase, hyphenated
-const CHARACTER_NAME = "Doodypoop";
-const SEASON = "season-mn-1"; // current season slug used by raider.io's cutoffs pages
-// ----------------------------------------------------------------------------
+// ============================================================
+// Configuration
+// ============================================================
 
-const SCORE_FILE = path.join(process.cwd(), "data", "score-history.json");
-const RUNS_FILE = path.join(process.cwd(), "data", "runs.json");
-
-async function fetchCharacterData() {
-  const url =
-    `https://raider.io/api/v1/characters/profile` +
-    `?region=${REGION}&realm=${REALM}&name=${encodeURIComponent(CHARACTER_NAME)}` +
-    `&fields=mythic_plus_scores_by_season:current,mythic_plus_recent_runs`;
-
-  const res = await fetch(url);
-  if (!res.ok) {
-    const body = await res.text();
-    throw new Error(`Character fetch failed: ${res.status} ${res.statusText}\nResponse body: ${body}`);
+const CHARACTERS = [
+  {
+    name: "Doodypoop",
+    realm: "Mal'Ganis",
+    region: "us"
+  },
+  {
+    name: "Doodypoopy",
+    realm: "Mal'Ganis",
+    region: "us"
+  },
+  {
+    name: "Bawolstank",
+    realm: "Mal'Ganis",
+    region: "us"
+  },
+  {
+    name: "Klittaurus",
+    realm: "Mal'Ganis",
+    region: "us"
   }
-  const json = await res.json();
-  console.log(JSON.stringify(json.mythic_plus_recent_runs?.[0], null, 2));
+];
 
-  // Uncomment to inspect the full raw shape if fields below ever stop matching:
-  // console.log(JSON.stringify(json, null, 2));
+const SEASON_SLUG = "season-mn-2";
 
-  const current = json.mythic_plus_scores_by_season?.[0];
-  const score = current?.scores?.all;
-  if (score === undefined) {
-    throw new Error(
-      "Could not find score at mythic_plus_scores_by_season[0].scores.all — " +
-      "log the raw response above and adjust the path."
-    );
-  }
+const DATA_DIR = path.join(process.cwd(), "data");
+const SCORE_FILE = path.join(DATA_DIR, "score-history.json");
+const RUNS_FILE = path.join(DATA_DIR, "runs.json");
 
-  const recentRuns = json.mythic_plus_recent_runs ?? [];
+const RAIDRIO_BASE = "https://raider.io/api/v1";
 
-  return { score, recentRuns };
-}
-
-async function fetchSeasonCutoff() {
-  const url =
-    `https://raider.io/api/v1/mythic-plus/season-cutoffs` +
-    `?season=${SEASON}&region=${REGION}`;
-
-  const res = await fetch(url);
-  if (!res.ok) {
-    const body = await res.text();
-    throw new Error(`Cutoff fetch failed: ${res.status} ${res.statusText}\nResponse body: ${body}`);
-  }
-  const json = await res.json();
-
-  // Confirmed field (found via debugging): cutoffs.p999.all.quantileMinValue
-  const cutoff = json.cutoffs?.p999?.all?.quantileMinValue;
-
-  if (cutoff === undefined) {
-    throw new Error(
-      "Could not find cutoff at cutoffs.p999.all.quantileMinValue — " +
-      "log the raw response and adjust the path (raider.io occasionally " +
-      "renames fields between seasons)."
-    );
-  }
-  return cutoff;
-}
+// ============================================================
+// Helpers
+// ============================================================
 
 async function readJson(file, fallback) {
   try {
-    const raw = await readFile(file, "utf-8");
+    const raw = await readFile(file, "utf8");
     return JSON.parse(raw);
   } catch {
     return fallback;
   }
 }
 
-function runKey(run) {
-  // keystone_run_id is the stable unique id raider.io assigns to a run.
-  // Fall back to a composite key if it's ever missing.
-  return run.keystone_run_id ?? `${run.dungeon}-${run.completed_at}-${run.mythic_level}`;
+async function writeJson(file, data) {
+  await mkdir(DATA_DIR, { recursive: true });
+
+  await writeFile(
+    file,
+    JSON.stringify(data, null, 2) + "\n",
+    "utf8"
+  );
 }
 
-function normalizeRun(run) {
-  const roster = (run.roster ?? []).map((entry) => ({
-    name: entry.character?.name,
-    realm: entry.character?.realm,
-    class: entry.character?.class,
-    spec: entry.character?.spec,
-    role: entry.role,
-  }));
+function characterId(character) {
+  return `${character.region}-${character.realm}-${character.name}`
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+function getPacificDate(date = new Date()) {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/Los_Angeles",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).format(date);
+}
+
+async function fetchJson(url) {
+  console.log(`GET ${url}`);
+
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    const body = await response.text();
+
+    throw new Error(
+      `Raider.IO request failed: ${response.status} ${response.statusText}\n${body}`
+    );
+  }
+
+  return response.json();
+}
+
+// ============================================================
+// Raider.IO
+// ============================================================
+
+async function fetchCharacterData(character) {
+  const profileUrl = new URL(`${RAIDRIO_BASE}/characters/profile`);
+
+  profileUrl.searchParams.set("region", character.region);
+  profileUrl.searchParams.set("realm", character.realm);
+  profileUrl.searchParams.set("name", character.name);
+  profileUrl.searchParams.set(
+    "fields",
+    "mythic_plus_scores_by_season:current"
+  );
+
+  const profile = await fetchJson(profileUrl);
+
+  const score =
+    profile.mythic_plus_scores_by_season?.[0]?.scores?.all ?? null;
+
+  if (score === null) {
+    throw new Error(
+      `No Mythic+ score returned for ${character.name}-${character.realm}`
+    );
+  }
 
   return {
-    id: runKey(run),
-    dungeon: run.dungeon ?? run.short_name,
-    level: run.mythic_level,
-    score: run.score,
-    completedAt: run.completed_at,
-    timeMs: run.clear_time_ms,
-    numUpgrades: run.num_keystone_upgrades,
-    roster,
+    profile,
+    score
   };
 }
 
-async function main() {
-  await mkdir(path.dirname(SCORE_FILE), { recursive: true });
+async function fetchRecentRuns(character) {
+  const url = new URL(`${RAIDRIO_BASE}/characters/mythic-plus-runs`);
 
-  const [charData, cutoff] = await Promise.all([
-    fetchCharacterData(),
-    fetchSeasonCutoff(),
-  ]);
+  url.searchParams.set("region", character.region);
+  url.searchParams.set("realm", character.realm);
+  url.searchParams.set("name", character.name);
+  url.searchParams.set("season", SEASON_SLUG);
 
-  // --- score/cutoff history: one point per fetch, no de-duping by day,
-  //     since you're now running this several times a day ---
-  const scoreHistory = await readJson(SCORE_FILE, []);
-  scoreHistory.push({
-    timestamp: new Date().toISOString(),
-    score: charData.score,
-    cutoff,
-  });
-  await writeFile(SCORE_FILE, JSON.stringify(scoreHistory, null, 2));
+  const data = await fetchJson(url);
 
-  // --- run history: merge in any runs we haven't recorded yet ---
-  const existingRuns = await readJson(RUNS_FILE, []);
-  const seenIds = new Set(existingRuns.map((r) => r.id));
+  return data.mythic_plus_recent_runs ?? [];
+}
 
-  let newCount = 0;
-  for (const rawRun of charData.recentRuns) {
-    const normalized = normalizeRun(rawRun);
-    if (!seenIds.has(normalized.id)) {
-      existingRuns.push(normalized);
-      seenIds.add(normalized.id);
-      newCount++;
-    }
+async function fetchSeasonCutoff(character) {
+  const url = new URL(`${RAIDRIO_BASE}/mythic-plus/season-cutoffs`);
+
+  url.searchParams.set("region", character.region);
+  url.searchParams.set("season", SEASON_SLUG);
+
+  const data = await fetchJson(url);
+
+  // Raider.IO's response contains the title cutoff information.
+  // Use the first available cutoff value from the returned data.
+  const cutoff =
+    data.cutoffs?.[0]?.score ??
+    data.cutoffs?.[0]?.value ??
+    null;
+
+  if (cutoff === null) {
+    console.warn(
+      `No season cutoff found for ${character.region}/${SEASON_SLUG}`
+    );
   }
 
-  existingRuns.sort((a, b) => (a.completedAt ?? "").localeCompare(b.completedAt ?? ""));
-  await writeFile(RUNS_FILE, JSON.stringify(existingRuns, null, 2));
+  return cutoff;
+}
 
-  console.log(
-    `Recorded score point: score=${charData.score} cutoff=${cutoff} | ` +
-    `${newCount} new run(s) added (${existingRuns.length} total tracked)`
+// ============================================================
+// Score history
+// ============================================================
+
+async function updateScoreHistory(
+  scoreHistory,
+  character,
+  score,
+  cutoff,
+  timestamp
+) {
+  const id = characterId(character);
+
+  const date = getPacificDate(timestamp);
+
+  const point = {
+    characterId: id,
+    character: character.name,
+    realm: character.realm,
+    region: character.region,
+    date,
+    timestamp: timestamp.toISOString(),
+    score,
+    cutoff
+  };
+
+  const existingIndex = scoreHistory.findIndex(
+    entry =>
+      entry.characterId === id &&
+      entry.date === date
   );
 
-  if (charData.recentRuns.length === 10 && newCount === 10) {
-    console.warn(
-      "WARNING: all 10 fetched runs were new — you may have missed runs " +
-      "between fetches. Consider increasing fetch frequency."
+  if (existingIndex >= 0) {
+    scoreHistory[existingIndex] = point;
+
+    console.log(
+      `Updated ${character.name}: ${date} → ${score}`
+    );
+  } else {
+    scoreHistory.push(point);
+
+    console.log(
+      `Added ${character.name}: ${date} → ${score}`
     );
   }
 }
 
-main().catch((err) => {
-  console.error(err);
+// ============================================================
+// Run history
+// ============================================================
+
+async function updateRuns(runsHistory, character, recentRuns) {
+  const id = characterId(character);
+
+  let added = 0;
+
+  for (const run of recentRuns) {
+    const runId =
+      run.keystone_run_id ??
+      run.id ??
+      run.run_id;
+
+    if (!runId) {
+      console.warn(
+        `${character.name}: recent run did not contain a run ID`
+      );
+      continue;
+    }
+
+    const alreadyExists = runsHistory.some(
+      existing =>
+        existing.characterId === id &&
+        String(existing.id) === String(runId)
+    );
+
+    if (alreadyExists) {
+      continue;
+    }
+
+    runsHistory.push({
+      characterId: id,
+      character: character.name,
+      realm: character.realm,
+      region: character.region,
+      id: runId,
+      run
+    });
+
+    added++;
+  }
+
+  console.log(
+    `${character.name}: added ${added} new run(s)`
+  );
+}
+
+// ============================================================
+// Main
+// ============================================================
+
+async function main() {
+  console.log("========================================");
+  console.log("Raider.IO data update");
+  console.log(`Season: ${SEASON_SLUG}`);
+  console.log(`Characters: ${CHARACTERS.length}`);
+  console.log("========================================");
+
+  const scoreHistory = await readJson(SCORE_FILE, []);
+  const runsHistory = await readJson(RUNS_FILE, []);
+
+  const timestamp = new Date();
+
+  const cutoff = await fetchSeasonCutoff(CHARACTERS[0]);
+
+  console.log(`Season cutoff: ${cutoff ?? "unknown"}`);
+
+  for (const character of CHARACTERS) {
+    console.log("");
+    console.log(
+      `===== ${character.name}-${character.realm} =====`
+    );
+
+    try {
+      const { score } = await fetchCharacterData(character);
+
+      console.log(`Score: ${score}`);
+
+      await updateScoreHistory(
+        scoreHistory,
+        character,
+        score,
+        cutoff,
+        timestamp
+      );
+
+      const recentRuns = await fetchRecentRuns(character);
+
+      console.log(
+        `Recent runs returned: ${recentRuns.length}`
+      );
+
+      await updateRuns(
+        runsHistory,
+        character,
+        recentRuns
+      );
+
+    } catch (error) {
+      console.error(
+        `FAILED: ${character.name}-${character.realm}`
+      );
+
+      console.error(error);
+
+      // Don't stop the other characters from updating.
+    }
+  }
+
+  scoreHistory.sort((a, b) => {
+    if (a.date !== b.date) {
+      return a.date.localeCompare(b.date);
+    }
+
+    return a.characterId.localeCompare(b.characterId);
+  });
+
+  runsHistory.sort((a, b) => {
+    const aTime = a.completedAt ?? "";
+    const bTime = b.completedAt ?? "";
+
+    return aTime.localeCompare(bTime);
+  });
+
+  await writeJson(SCORE_FILE, scoreHistory);
+  await writeJson(RUNS_FILE, runsHistory);
+
+  console.log("");
+  console.log("========================================");
+  console.log("Update complete");
+  console.log(`Score history entries: ${scoreHistory.length}`);
+  console.log(`Run history entries: ${runsHistory.length}`);
+  console.log("========================================");
+}
+
+main().catch(error => {
+  console.error(error);
   process.exit(1);
 });

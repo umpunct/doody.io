@@ -260,56 +260,65 @@ async function main(){
   document.getElementById('meterFill').style.width = pct + '%';
 
   const ctx = document.getElementById('chart').getContext('2d');
-  new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: data.map(d => new Date(d.timestamp).toLocaleString(undefined, {
-        month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'
-      })),
-      datasets: [
-        {
-          label: 'Score',
-          data: data.map(d => d.score),
-          borderColor: '#e8b64f',
-          backgroundColor: 'rgba(232,182,79,0.12)',
-          fill: true,
-          tension: 0.3,
-          pointRadius: 3,
-          pointBackgroundColor: '#e8b64f',
-        },
-        {
-          label: 'Title Cutoff',
-          data: data.map(d => d.cutoff),
-          borderColor: '#a873ff',
-          borderDash: [6, 4],
-          backgroundColor: 'transparent',
-          fill: false,
-          tension: 0.3,
-          pointRadius: 2,
-          pointBackgroundColor: '#a873ff',
-        }
-      ]
+
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: data.map(d => d.date),
+    datasets: [
+      {
+        label: 'Score',
+        data: data.map(d => d.score),
+        fill: true,
+        tension: 0.3,
+        pointRadius: 3
+      },
+      {
+        label: 'Title Cutoff',
+        data: data.map(d => d.cutoff),
+        borderDash: [6, 4],
+        fill: false,
+        tension: 0.3,
+        pointRadius: 2
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    interaction: {
+      mode: 'index',
+      intersect: false
     },
-    options: {
-      responsive: true,
-      interaction: { mode: 'index', intersect: false },
-      plugins: {
-        legend: {
-          labels: { color: '#ede9f7', font: { family: 'Inter' } }
+    plugins: {
+      legend: {
+        labels: {
+          color: '#ede9f7',
+          font: {
+            family: 'Inter'
+          }
+        }
+      }
+    },
+    scales: {
+      x: {
+        grid: {
+          color: '#2a2438'
+        },
+        ticks: {
+          color: '#8f88a6'
         }
       },
-      scales: {
-        x: {
-          grid: { color: '#2a2438' },
-          ticks: { color: '#8f88a6' }
+      y: {
+        grid: {
+          color: '#2a2438'
         },
-        y: {
-          grid: { color: '#2a2438' },
-          ticks: { color: '#8f88a6' }
+        ticks: {
+          color: '#8f88a6'
         }
       }
     }
-  });
+  }
+});
 }
 
 main();
