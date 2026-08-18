@@ -37,6 +37,12 @@ const SCORE_FILE = path.join(
   "score-history.json"
 );
 
+const TITLE_CUTOFF_FILE = path.join(
+  process.cwd(),
+  "data",
+  "title-cutoff.json"
+);
+
 const RUNS_FILE = path.join(
   process.cwd(),
   "data",
@@ -157,7 +163,6 @@ function updateScoreHistory(
   scoreHistory,
   characterName,
   score,
-  cutoff,
   timestamp
 ) {
   const characterId =
@@ -172,8 +177,7 @@ function updateScoreHistory(
     region: REGION,
     date,
     timestamp: timestamp.toISOString(),
-    score,
-    cutoff
+    score
   };
 
   const existingIndex =
@@ -194,6 +198,37 @@ function updateScoreHistory(
 
     console.log(
       `${characterName}: added ${date} → ${score}`
+    );
+  }
+}
+
+function updateTitleCutoffHistory(
+  cutoffHistory,
+  cutoff,
+  timestamp
+) {
+  const date = getPacificDate(timestamp);
+
+  const point = {
+    date,
+    timestamp: timestamp.toISOString(),
+    cutoff
+  };
+
+  const existingIndex =
+    cutoffHistory.findIndex(
+      entry => entry.date === date
+    );
+
+  if (existingIndex >= 0) {
+    cutoffHistory[existingIndex] = point;
+    console.log(
+      `Title cutoff: updated ${date} → ${cutoff}`
+    );
+  } else {
+    cutoffHistory.push(point);
+    console.log(
+      `Title cutoff: added ${date} → ${cutoff}`
     );
   }
 }
@@ -276,6 +311,9 @@ async function main() {
   const scoreHistory =
     await readJson(SCORE_FILE, []);
 
+  const cutoffHistory =
+    await readJson(TITLE_CUTOFF_FILE, []);
+
   const runsHistory =
     await readJson(RUNS_FILE, []);
 
@@ -284,6 +322,12 @@ async function main() {
     await fetchSeasonCutoff();
 
   console.log(`Season cutoff: ${cutoff}`);
+
+  updateTitleCutoffHistory(
+    cutoffHistory,
+    cutoff,
+    timestamp
+  );
 
   let totalNewRuns = 0;
 
@@ -310,7 +354,6 @@ async function main() {
         scoreHistory,
         characterName,
         score,
-        cutoff,
         timestamp
       );
 
@@ -344,6 +387,10 @@ async function main() {
     return a.date.localeCompare(b.date);
   });
 
+  cutoffHistory.sort((a, b) =>
+    a.date.localeCompare(b.date)
+  );
+
   // Keep runs chronologically ordered when possible.
   runsHistory.sort((a, b) => {
     const aTime =
@@ -361,6 +408,11 @@ async function main() {
   );
 
   await writeJson(
+    TITLE_CUTOFF_FILE,
+    cutoffHistory
+  );
+
+  await writeJson(
     RUNS_FILE,
     runsHistory
   );
@@ -370,6 +422,9 @@ async function main() {
   console.log("Update complete");
   console.log(
     `Score history: ${scoreHistory.length} entries`
+  );
+  console.log(
+    `Title cutoff history: ${cutoffHistory.length} entries`
   );
   console.log(
     `Runs: ${runsHistory.length} entries`
