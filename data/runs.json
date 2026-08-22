@@ -5589,5 +5589,188 @@
       },
       "role": "tank"
     }
+  },
+  {
+    "id": 2044004,
+    "characterId": "us-mal-ganis-doodypoopy",
+    "character": "Doodypoopy",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Ruby Life Pools",
+      "short_name": "RLP",
+      "mythic_level": 14,
+      "completed_at": "2026-08-22T15:49:19.000Z",
+      "clear_time_ms": 1561570,
+      "keystone_run_id": 2044004,
+      "par_time_ms": 1680999,
+      "num_keystone_upgrades": 1,
+      "map_challenge_mode_id": 399,
+      "zone_id": 14063,
+      "zone_expansion_id": 9,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_lifepools.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion9/base/ruby-life-pools.jpg",
+      "score": 397.7,
+      "affixes": [
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 147,
+          "name": "Xal'atath's Guile",
+          "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+          "icon": "ability_racial_chillofnight",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+          "wowhead_url": "https://wowhead.com/affix=147"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/2044004-14-ruby-life-pools",
+      "spec": {
+        "id": 264,
+        "name": "Restoration",
+        "slug": "restoration",
+        "class_id": 7,
+        "role": "healer",
+        "is_melee": false,
+        "patch": "1.0.0",
+        "ordinal": 2
+      },
+      "role": "healer"
+    }
+  },
+  {
+    "id": 2120536,
+    "characterId": "us-mal-ganis-klittaurus",
+    "character": "Klittaurus",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "The Blinding Vale",
+      "short_name": "BV",
+      "mythic_level": 14,
+      "completed_at": "2026-08-22T17:35:06.000Z",
+      "clear_time_ms": 1610277,
+      "keystone_run_id": 2120536,
+      "par_time_ms": 1800999,
+      "num_keystone_upgrades": 1,
+      "map_challenge_mode_id": 584,
+      "zone_id": 16359,
+      "zone_expansion_id": 11,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_lightbloom.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/the-blinding-vale.jpg",
+      "score": 399,
+      "affixes": [
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 147,
+          "name": "Xal'atath's Guile",
+          "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+          "icon": "ability_racial_chillofnight",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+          "wowhead_url": "https://wowhead.com/affix=147"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/2120536-14-the-blinding-vale",
+      "spec": {
+        "id": 250,
+        "name": "Blood",
+        "slug": "blood",
+        "class_id": 6,
+        "role": "tank",
+        "is_melee": true,
+        "patch": "3.0.0",
+        "ordinal": 0
+      },
+      "role": "tank"
+    }
+  },
+  {
+    "id": 2151079,
+    "characterId": "us-mal-ganis-klittaurus",
+    "character": "Klittaurus",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Voidscar Arena",
+      "short_name": "VSA",
+      "mythic_level": 14,
+      "completed_at": "2026-08-22T18:14:53.000Z",
+      "clear_time_ms": 1752445,
+      "keystone_run_id": 2151079,
+      "par_time_ms": 1800999,
+      "num_keystone_upgrades": 1,
+      "map_challenge_mode_id": 585,
+      "zone_id": 16425,
+      "zone_expansion_id": 11,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_voidscararena.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/voidscar-arena.jpg",
+      "score": 396,
+      "affixes": [
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 147,
+          "name": "Xal'atath's Guile",
+          "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+          "icon": "ability_racial_chillofnight",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+          "wowhead_url": "https://wowhead.com/affix=147"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/2151079-14-voidscar-arena",
+      "spec": {
+        "id": 250,
+        "name": "Blood",
+        "slug": "blood",
+        "class_id": 6,
+        "role": "tank",
+        "is_melee": true,
+        "patch": "3.0.0",
+        "ordinal": 0
+      },
+      "role": "tank"
+    }
   }
 ]
