@@ -45,6 +45,15 @@
     "score": 3167.9
   },
   {
+    "characterId": "us-mal-ganis-bawolstank",
+    "character": "Bawolstank",
+    "realm": "mal-ganis",
+    "region": "us",
+    "date": "2026-08-23",
+    "timestamp": "2026-08-23T09:34:08.511Z",
+    "score": 3167.9
+  },
+  {
     "characterId": "us-mal-ganis-doodypoop",
     "character": "Doodypoop",
     "realm": "mal-ganis",
@@ -87,6 +96,15 @@
     "region": "us",
     "date": "2026-08-22",
     "timestamp": "2026-08-23T06:51:21.282Z",
+    "score": 1115.3
+  },
+  {
+    "characterId": "us-mal-ganis-doodypoop",
+    "character": "Doodypoop",
+    "realm": "mal-ganis",
+    "region": "us",
+    "date": "2026-08-23",
+    "timestamp": "2026-08-23T09:34:08.511Z",
     "score": 1115.3
   },
   {
@@ -135,6 +153,15 @@
     "score": 1077.3
   },
   {
+    "characterId": "us-mal-ganis-doodypoopy",
+    "character": "Doodypoopy",
+    "realm": "mal-ganis",
+    "region": "us",
+    "date": "2026-08-23",
+    "timestamp": "2026-08-23T09:34:08.511Z",
+    "score": 1077.3
+  },
+  {
     "characterId": "us-mal-ganis-klittaurus",
     "character": "Klittaurus",
     "realm": "mal-ganis",
@@ -177,6 +204,15 @@
     "region": "us",
     "date": "2026-08-22",
     "timestamp": "2026-08-23T06:51:21.282Z",
+    "score": 3173.1
+  },
+  {
+    "characterId": "us-mal-ganis-klittaurus",
+    "character": "Klittaurus",
+    "realm": "mal-ganis",
+    "region": "us",
+    "date": "2026-08-23",
+    "timestamp": "2026-08-23T09:34:08.511Z",
     "score": 3173.1
   }
 ]
