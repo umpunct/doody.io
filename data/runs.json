@@ -6937,6 +6937,67 @@
     }
   },
   {
+    "id": 3411672,
+    "characterId": "us-mal-ganis-doodypoop",
+    "character": "Doodypoop",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Den of Nalorakk",
+      "short_name": "DON",
+      "mythic_level": 10,
+      "completed_at": "2026-08-24T15:29:09.000Z",
+      "clear_time_ms": 1299041,
+      "keystone_run_id": 3411672,
+      "par_time_ms": 1920999,
+      "num_keystone_upgrades": 2,
+      "map_challenge_mode_id": 586,
+      "zone_id": 16368,
+      "zone_expansion_id": 11,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_proveyourworth.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/den-of-nalorakk.jpg",
+      "score": 332.1,
+      "affixes": [
+        {
+          "id": 162,
+          "name": "Xal'atath's Bargain: Pulsar",
+          "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+          "icon": "inv_cosmicvoid_nova",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+          "wowhead_url": "https://wowhead.com/affix=162"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/3411672-10-den-of-nalorakk",
+      "spec": {
+        "id": 577,
+        "name": "Havoc",
+        "slug": "havoc",
+        "class_id": 12,
+        "role": "dps",
+        "is_melee": true,
+        "patch": "7.0.0",
+        "ordinal": 0
+      },
+      "role": "dps"
+    }
+  },
+  {
     "id": 3228397,
     "characterId": "us-mal-ganis-doodypoop",
     "character": "Doodypoop",
@@ -6995,6 +7056,128 @@
         "ordinal": 0
       },
       "role": "dps"
+    }
+  },
+  {
+    "id": 3411744,
+    "characterId": "us-mal-ganis-doodypoop",
+    "character": "Doodypoop",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "The Blinding Vale",
+      "short_name": "BV",
+      "mythic_level": 11,
+      "completed_at": "2026-08-24T16:38:46.000Z",
+      "clear_time_ms": 1634644,
+      "keystone_run_id": 3411744,
+      "par_time_ms": 1800999,
+      "num_keystone_upgrades": 1,
+      "map_challenge_mode_id": 584,
+      "zone_id": 16359,
+      "zone_expansion_id": 11,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_lightbloom.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/the-blinding-vale.jpg",
+      "score": 338.5,
+      "affixes": [
+        {
+          "id": 162,
+          "name": "Xal'atath's Bargain: Pulsar",
+          "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+          "icon": "inv_cosmicvoid_nova",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+          "wowhead_url": "https://wowhead.com/affix=162"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/3411744-11-the-blinding-vale",
+      "spec": {
+        "id": 581,
+        "name": "Vengeance",
+        "slug": "vengeance",
+        "class_id": 12,
+        "role": "tank",
+        "is_melee": true,
+        "patch": "7.0.0",
+        "ordinal": 1
+      },
+      "role": "tank"
+    }
+  },
+  {
+    "id": 3391970,
+    "characterId": "us-mal-ganis-klittaurus",
+    "character": "Klittaurus",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Altar of Fangs",
+      "short_name": "AOF",
+      "mythic_level": 15,
+      "completed_at": "2026-08-24T21:58:23.000Z",
+      "clear_time_ms": 1806142,
+      "keystone_run_id": 3391970,
+      "par_time_ms": 1800999,
+      "num_keystone_upgrades": 0,
+      "map_challenge_mode_id": 588,
+      "zone_id": 16865,
+      "zone_expansion_id": 11,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_altaroffangs.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/altar-of-fangs.jpg",
+      "score": 319.9,
+      "affixes": [
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 147,
+          "name": "Xal'atath's Guile",
+          "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+          "icon": "ability_racial_chillofnight",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+          "wowhead_url": "https://wowhead.com/affix=147"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/3391970-15-altar-of-fangs",
+      "spec": {
+        "id": 250,
+        "name": "Blood",
+        "slug": "blood",
+        "class_id": 6,
+        "role": "tank",
+        "is_melee": true,
+        "patch": "3.0.0",
+        "ordinal": 0
+      },
+      "role": "tank"
     }
   }
 ]
