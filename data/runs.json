@@ -7179,5 +7179,249 @@
       },
       "role": "tank"
     }
+  },
+  {
+    "id": 3560493,
+    "characterId": "us-mal-ganis-doodypoopy",
+    "character": "Doodypoopy",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Murder Row",
+      "short_name": "MR",
+      "mythic_level": 10,
+      "completed_at": "2026-08-25T10:32:02.000Z",
+      "clear_time_ms": 1662004,
+      "keystone_run_id": 3560493,
+      "par_time_ms": 2040999,
+      "num_keystone_upgrades": 1,
+      "map_challenge_mode_id": 587,
+      "zone_id": 16091,
+      "zone_expansion_id": 11,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_murderrow.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/murder-row.jpg",
+      "score": 327,
+      "affixes": [
+        {
+          "id": 162,
+          "name": "Xal'atath's Bargain: Pulsar",
+          "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+          "icon": "inv_cosmicvoid_nova",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+          "wowhead_url": "https://wowhead.com/affix=162"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/3560493-10-murder-row",
+      "spec": {
+        "id": 264,
+        "name": "Restoration",
+        "slug": "restoration",
+        "class_id": 7,
+        "role": "healer",
+        "is_melee": false,
+        "patch": "1.0.0",
+        "ordinal": 2
+      },
+      "role": "healer"
+    }
+  },
+  {
+    "id": 3603015,
+    "characterId": "us-mal-ganis-doodypoopy",
+    "character": "Doodypoopy",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Ruby Life Pools",
+      "short_name": "RLP",
+      "mythic_level": 10,
+      "completed_at": "2026-08-25T11:13:59.000Z",
+      "clear_time_ms": 2176900,
+      "keystone_run_id": 3603015,
+      "par_time_ms": 1680999,
+      "num_keystone_upgrades": 0,
+      "map_challenge_mode_id": 399,
+      "zone_id": 14063,
+      "zone_expansion_id": 9,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_lifepools.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion9/base/ruby-life-pools.jpg",
+      "score": 293.9,
+      "affixes": [
+        {
+          "id": 162,
+          "name": "Xal'atath's Bargain: Pulsar",
+          "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+          "icon": "inv_cosmicvoid_nova",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+          "wowhead_url": "https://wowhead.com/affix=162"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/3603015-10-ruby-life-pools",
+      "spec": {
+        "id": 264,
+        "name": "Restoration",
+        "slug": "restoration",
+        "class_id": 7,
+        "role": "healer",
+        "is_melee": false,
+        "patch": "1.0.0",
+        "ordinal": 2
+      },
+      "role": "healer"
+    }
+  },
+  {
+    "id": 3602960,
+    "characterId": "us-mal-ganis-doodypoopy",
+    "character": "Doodypoopy",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Murder Row",
+      "short_name": "MR",
+      "mythic_level": 10,
+      "completed_at": "2026-08-25T11:55:10.000Z",
+      "clear_time_ms": 1920131,
+      "keystone_run_id": 3602960,
+      "par_time_ms": 2040999,
+      "num_keystone_upgrades": 1,
+      "map_challenge_mode_id": 587,
+      "zone_id": 16091,
+      "zone_expansion_id": 11,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_murderrow.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/murder-row.jpg",
+      "score": 322.2,
+      "affixes": [
+        {
+          "id": 162,
+          "name": "Xal'atath's Bargain: Pulsar",
+          "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+          "icon": "inv_cosmicvoid_nova",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+          "wowhead_url": "https://wowhead.com/affix=162"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/3602960-10-murder-row",
+      "spec": {
+        "id": 264,
+        "name": "Restoration",
+        "slug": "restoration",
+        "class_id": 7,
+        "role": "healer",
+        "is_melee": false,
+        "patch": "1.0.0",
+        "ordinal": 2
+      },
+      "role": "healer"
+    }
+  },
+  {
+    "id": 3602030,
+    "characterId": "us-mal-ganis-doodypoopy",
+    "character": "Doodypoopy",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Temple of Sethraliss",
+      "short_name": "TOS",
+      "mythic_level": 12,
+      "completed_at": "2026-08-25T12:39:20.000Z",
+      "clear_time_ms": 2062467,
+      "keystone_run_id": 3602030,
+      "par_time_ms": 1920999,
+      "num_keystone_upgrades": 0,
+      "map_challenge_mode_id": 250,
+      "zone_id": 9527,
+      "zone_expansion_id": 7,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_templeofsethraliss.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/temple-of-sethraliss.jpg",
+      "score": 317.2,
+      "affixes": [
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 147,
+          "name": "Xal'atath's Guile",
+          "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+          "icon": "ability_racial_chillofnight",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+          "wowhead_url": "https://wowhead.com/affix=147"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/3602030-12-temple-of-sethraliss",
+      "spec": {
+        "id": 264,
+        "name": "Restoration",
+        "slug": "restoration",
+        "class_id": 7,
+        "role": "healer",
+        "is_melee": false,
+        "patch": "1.0.0",
+        "ordinal": 2
+      },
+      "role": "healer"
+    }
   }
 ]
