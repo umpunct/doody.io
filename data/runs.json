@@ -7423,5 +7423,127 @@
       },
       "role": "healer"
     }
+  },
+  {
+    "id": 4160486,
+    "characterId": "us-mal-ganis-doodypoop",
+    "character": "Doodypoop",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Temple of Sethraliss",
+      "short_name": "TOS",
+      "mythic_level": 11,
+      "completed_at": "2026-08-26T18:08:33.000Z",
+      "clear_time_ms": 1542149,
+      "keystone_run_id": 4160486,
+      "par_time_ms": 1920999,
+      "num_keystone_upgrades": 1,
+      "map_challenge_mode_id": 250,
+      "zone_id": 9527,
+      "zone_expansion_id": 7,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_templeofsethraliss.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/temple-of-sethraliss.jpg",
+      "score": 342.4,
+      "affixes": [
+        {
+          "id": 158,
+          "name": "Xal'atath's Bargain: Voidbound",
+          "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
+          "icon": "inv_cosmicvoid_buff",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
+          "wowhead_url": "https://wowhead.com/affix=158"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/4160486-11-temple-of-sethraliss",
+      "spec": {
+        "id": 581,
+        "name": "Vengeance",
+        "slug": "vengeance",
+        "class_id": 12,
+        "role": "tank",
+        "is_melee": true,
+        "patch": "7.0.0",
+        "ordinal": 1
+      },
+      "role": "tank"
+    }
+  },
+  {
+    "id": 4199478,
+    "characterId": "us-mal-ganis-doodypoop",
+    "character": "Doodypoop",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Murder Row",
+      "short_name": "MR",
+      "mythic_level": 10,
+      "completed_at": "2026-08-26T18:38:12.000Z",
+      "clear_time_ms": 1439897,
+      "keystone_run_id": 4199478,
+      "par_time_ms": 2040999,
+      "num_keystone_upgrades": 2,
+      "map_challenge_mode_id": 587,
+      "zone_id": 16091,
+      "zone_expansion_id": 11,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_murderrow.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/murder-row.jpg",
+      "score": 331,
+      "affixes": [
+        {
+          "id": 158,
+          "name": "Xal'atath's Bargain: Voidbound",
+          "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
+          "icon": "inv_cosmicvoid_buff",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
+          "wowhead_url": "https://wowhead.com/affix=158"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/4199478-10-murder-row",
+      "spec": {
+        "id": 581,
+        "name": "Vengeance",
+        "slug": "vengeance",
+        "class_id": 12,
+        "role": "tank",
+        "is_melee": true,
+        "patch": "7.0.0",
+        "ordinal": 1
+      },
+      "role": "tank"
+    }
   }
 ]
