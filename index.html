@@ -199,28 +199,31 @@ function toRgba(hex, alpha) {
 }
 
 function getLatestCutoff(titleCutoffHistory, scoreHistory) {
-  const cutoffHistory = Array.isArray(titleCutoffHistory) ? titleCutoffHistory : [];
-  const legacyCutoffValues = Array.isArray(scoreHistory)
-    ? scoreHistory.map(d => Number(d.cutoff)).filter(v => Number.isFinite(v))
-    : [];
+  const cutoffHistory = Array.isArray(titleCutoffHistory) ? titleCutoffHistory.slice() : [];
 
-  const points = cutoffHistory.length > 0 ? cutoffHistory : legacyCutoffValues.map((cutoff, index) => ({
-    cutoff,
-    date: scoreHistory[index]?.date ?? `legacy-${index}`,
-    timestamp: scoreHistory[index]?.timestamp ?? new Date().toISOString()
-  }));
-
-  if(points.length === 0) return null;
-
-  return points.reduce((latest, point) => {
-    const cutoff = Number(point.cutoff);
-    if(!Number.isFinite(cutoff)) return latest;
-    const pointTime = point.timestamp ? new Date(point.timestamp).getTime() : 0;
-    if(!latest || pointTime > latest.time) {
-      return { cutoff, time: pointTime };
+  // Fallback: if there is no dedicated cutoff history, look for legacy cutoff
+  // values embedded in score history entries.
+  if (cutoffHistory.length === 0 && Array.isArray(scoreHistory)) {
+    for (const d of scoreHistory) {
+      if (Number.isFinite(Number(d.cutoff))) {
+        cutoffHistory.push({ date: d.date, timestamp: d.timestamp, cutoff: Number(d.cutoff) });
+      }
     }
-    return latest;
-  }, null);
+  }
+
+  if (cutoffHistory.length === 0) return null;
+
+  // Sort by timestamp (robust to ordering) and return most recent.
+  cutoffHistory.sort((a, b) => {
+    const ta = a.timestamp ? new Date(a.timestamp).getTime() : 0;
+    const tb = b.timestamp ? new Date(b.timestamp).getTime() : 0;
+    return ta - tb;
+  });
+
+  const latest = cutoffHistory[cutoffHistory.length - 1];
+  const cutoff = Number(latest.cutoff);
+  if (!Number.isFinite(cutoff)) return null;
+  return { cutoff, time: latest.timestamp ? new Date(latest.timestamp).getTime() : 0 };
 }
 
 function renderSummary(data, titleCutoffHistory){
@@ -341,7 +344,7 @@ async function main(){
   const dates = [...new Set(data.map(d => d.date))].sort();
   const cutoffHistory = Array.isArray(titleCutoffHistory) && titleCutoffHistory.length > 0
     ? titleCutoffHistory
-    : data.filter(d => Number.isFinite(Number(d.cutoff))).map(d => ({ date: d.date, cutoff: d.cutoff }));
+    : data.filter(d => Number.isFinite(Number(d.cutoff))).map(d => ({ date: d.date, cutoff: d.cutoff, timestamp: d.timestamp }));
 
   const cutoffLookup = new Map();
   for(const point of cutoffHistory){
@@ -349,9 +352,18 @@ async function main(){
     if(Number.isFinite(cutoff)) cutoffLookup.set(point.date, cutoff);
   }
 
-  const cutoffValue = cutoffHistory.length > 0
-    ? Number(cutoffHistory.reduce((max, point) => Math.max(max, Number(point.cutoff) || 0), 0))
-    : null;
+  // Use the most recent cutoff entry (by timestamp), not the numeric max.
+  let cutoffValue = null;
+  if (cutoffHistory.length > 0) {
+    const sorted = cutoffHistory.slice().sort((a,b) => {
+      const ta = a.timestamp ? new Date(a.timestamp).getTime() : 0;
+      const tb = b.timestamp ? new Date(b.timestamp).getTime() : 0;
+      return ta - tb;
+    });
+    const latest = sorted[sorted.length - 1];
+    cutoffValue = Number(latest.cutoff);
+    if (!Number.isFinite(cutoffValue)) cutoffValue = null;
+  }
 
   const datasets = characters.map((character, index) => {
     const lookup = new Map();
