@@ -13,7 +13,7 @@
 //
 // Requires Node 18+.
 
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, rename } from "node:fs/promises";
 import path from "node:path";
 
 // ============================================================
@@ -65,11 +65,15 @@ async function readJson(file, fallback) {
 async function writeJson(file, data) {
   await mkdir(path.dirname(file), { recursive: true });
 
+  // Atomic write: write to temp file then rename to avoid partial writes
+  const tmp = file + ".tmp";
   await writeFile(
-    file,
+    tmp,
     JSON.stringify(data, null, 2) + "\n",
     "utf-8"
   );
+  await writeFile(tmp, "", { flag: "a" }); // ensure file is flushed to disk by closing
+  await rename(tmp, file);
 }
 
 function getCharacterId(characterName) {
