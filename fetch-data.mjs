@@ -24,11 +24,16 @@ const REGION = "us";
 const REALM = "mal-ganis";
 const SEASON = "season-mn-2";
 
+// Characters can be specified as strings (name) which use the default
+// `REALM` and `REGION`, or as objects with `{ name, realm, region }`
+// to track characters on other realms/regions.
 const CHARACTERS = [
-  "Doodypoop",
-  "Doodypoopy",
-  "Bawolstank",
-  "Klittaurus"
+  { name: "Doodypoop", realm: "mal-ganis", region: "us" },
+  { name: "Doodypoopy", realm: "mal-ganis", region: "us" },
+  { name: "Bawolstank", realm: "mal-ganis", region: "us" },
+  { name: "Klittaurus", realm: "mal-ganis", region: "us" },
+  // Add Zellaraa on Sargeras
+  { name: "Zellaraa", realm: "sargeras", region: "us" }
 ];
 
 const SCORE_FILE = path.join(
@@ -76,8 +81,8 @@ async function writeJson(file, data) {
   await rename(tmp, file);
 }
 
-function getCharacterId(characterName) {
-  return `${REGION}-${REALM}-${characterName}`
+function getCharacterId(region, realm, characterName) {
+  return `${region}-${realm}-${characterName}`
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
@@ -110,11 +115,11 @@ async function fetchJson(url) {
 // Raider.IO
 // ============================================================
 
-async function fetchCharacterData(characterName) {
+async function fetchCharacterData(characterName, realm, region) {
   const url =
     `https://raider.io/api/v1/characters/profile` +
-    `?region=${REGION}` +
-    `&realm=${REALM}` +
+    `?region=${region}` +
+    `&realm=${realm}` +
     `&name=${encodeURIComponent(characterName)}` +
     `&fields=mythic_plus_scores_by_season:current,mythic_plus_recent_runs`;
 
@@ -166,19 +171,21 @@ async function fetchSeasonCutoff() {
 function updateScoreHistory(
   scoreHistory,
   characterName,
+  realm,
+  region,
   score,
   timestamp
 ) {
   const characterId =
-    getCharacterId(characterName);
+    getCharacterId(region, realm, characterName);
 
   const date = getPacificDate(timestamp);
 
   const point = {
     characterId,
     character: characterName,
-    realm: REALM,
-    region: REGION,
+    realm,
+    region,
     date,
     timestamp: timestamp.toISOString(),
     score
@@ -252,10 +259,12 @@ function getRunId(run) {
 function updateRuns(
   runsHistory,
   characterName,
+  realm,
+  region,
   recentRuns
 ) {
   const characterId =
-    getCharacterId(characterName);
+    getCharacterId(region, realm, characterName);
 
   let added = 0;
 
@@ -283,8 +292,8 @@ function updateRuns(
       id: runId,
       characterId,
       character: characterName,
-      realm: REALM,
-      region: REGION,
+      realm,
+      region,
       run
     });
 
@@ -307,7 +316,10 @@ async function main() {
   console.log("========================================");
   console.log("Raider.IO data update");
   console.log(`Season: ${SEASON}`);
-  console.log(`Characters: ${CHARACTERS.join(", ")}`);
+  const characterList = CHARACTERS
+    .map(entry => typeof entry === "string" ? entry : entry.name)
+    .join(", ");
+  console.log(`Characters: ${characterList}`);
   console.log("========================================");
 
   const timestamp = new Date();
@@ -335,10 +347,16 @@ async function main() {
 
   let totalNewRuns = 0;
 
-  for (const characterName of CHARACTERS) {
+  for (const entry of CHARACTERS) {
+    const {
+      name: characterName,
+      realm = REALM,
+      region = REGION
+    } = typeof entry === "string" ? { name: entry } : entry;
+
     console.log("");
     console.log(
-      `===== ${characterName}-${REALM} =====`
+      `===== ${characterName}-${realm} (${region}) =====`
     );
 
     try {
@@ -346,7 +364,9 @@ async function main() {
         score,
         recentRuns
       } = await fetchCharacterData(
-        characterName
+        characterName,
+        realm,
+        region
       );
 
       console.log(
@@ -357,6 +377,8 @@ async function main() {
       updateScoreHistory(
         scoreHistory,
         characterName,
+        realm,
+        region,
         score,
         timestamp
       );
@@ -365,12 +387,14 @@ async function main() {
       totalNewRuns += updateRuns(
         runsHistory,
         characterName,
+        realm,
+        region,
         recentRuns
       );
 
     } catch (error) {
       console.error(
-        `FAILED: ${characterName}`
+        `FAILED: ${characterName} (${realm})`
       );
 
       console.error(error);

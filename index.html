@@ -87,6 +87,17 @@
     font-family:'Cinzel', serif; font-size:16px; margin: 0 0 18px; font-weight:600;
     color: var(--text);
   }
+  .cutoff-panel{
+    display:flex; align-items:center; gap:16px;
+    background: linear-gradient(90deg, rgba(168,115,255,0.06), rgba(232,182,79,0.04));
+    border: 1px solid rgba(168,115,255,0.18);
+    padding: 14px 18px; border-radius: 12px; margin-top: 12px;
+    box-shadow: 0 6px 20px rgba(168,115,255,0.06);
+  }
+  .cutoff-panel .label{ font-size:12px; color:var(--text-muted); text-transform:uppercase; }
+  .cutoff-panel .value{ font-size:24px; font-weight:700; color:var(--purple); }
+  .cutoff-panel{ justify-content:center; }
+  .cutoff-panel > div{ text-align:center; }
   canvas{ max-height: 360px; }
 
   .empty{
@@ -123,9 +134,10 @@
 <body>
   <div class="wrap">
     <header>
-      <p class="eyebrow">Doody vs. Title</p>
-      <h1>Operation 100 Points Above</h1>
-      <p class="sub" id="subtitle">Loading character data…</p>
+        <p class="eyebrow">Doody vs. Title</p>
+        <h1>Operation 100 Points Above</h1>
+        <p class="sub" id="subtitle">Loading character data…</p>
+        <div id="cutoffPanel" style="margin-top:18px; display:none;"></div>
     </header>
 
     <div class="stat-row" id="statRow" style="display:none;">
@@ -183,6 +195,11 @@ async function loadJson(path){
     return [];
   }
 }
+
+// Optional display name overrides keyed by lowercase character name.
+const DISPLAY_NAMES = {
+  'zellaraa': 'COACH'
+};
 
 function toRgba(hex, alpha) {
   const clean = hex.replace('#', '');
@@ -244,6 +261,7 @@ function renderSummary(data, titleCutoffHistory){
   const cutoffValue = latestCutoff ? latestCutoff.cutoff : null;
 
   const charCards = characters.map((character, index) => {
+    const displayName = DISPLAY_NAMES[character.toLowerCase()] || character;
     const latest = latestByCharacter.get(character) || {};
     const score = Number(latest.score ?? 0);
     const cutoff = cutoffValue ?? 0;
@@ -256,7 +274,7 @@ function renderSummary(data, titleCutoffHistory){
 
     return `
       <div class="stat">
-        <div class="label">${character}</div>
+        <div class="label">${displayName}</div>
         <div class="value" style="color:${color}">${score.toLocaleString()}</div>
         <div class="meter"><div class="fill" style="width:${percent}%; background:linear-gradient(90deg, ${color}, #e8b64f);"></div></div>
         <div class="caption" style="margin-top:8px;">${gapLabel}</div>
@@ -264,17 +282,25 @@ function renderSummary(data, titleCutoffHistory){
     `;
   }).join('');
 
-  const cutoffCard = `
-    <div class="stat cutoff">
-      <div class="label">Title Cutoff</div>
-      <div class="value" style="color:#a873ff">${cutoffValue !== null ? cutoffValue.toLocaleString() : '—'}</div>
-      <div class="caption">${cutoffValue !== null ? 'Season title threshold' : 'Awaiting cutoff data'}</div>
-      <div class="meter"><div class="fill" style="width:${cutoffValue !== null && characters.length ? Math.min(100, 100 / Math.max(1, characters.length)) : 0}%; background:linear-gradient(90deg, #6b4fa0, #a873ff);"></div></div>
-    </div>
-  `;
-
-  statRow.innerHTML = `${charCards}${cutoffCard}`;
+  statRow.innerHTML = `${charCards}`;
   statRow.style.display = 'grid';
+
+  // Render the prominent cutoff panel separately so it stands out below the header.
+  const cutoffPanelEl = document.getElementById('cutoffPanel');
+  if (cutoffValue !== null) {
+    cutoffPanelEl.innerHTML = `
+      <div class="cutoff-panel" role="status" aria-live="polite">
+        <div style="width:100%">
+          <div class="label">Title Cutoff</div>
+          <div class="value">${cutoffValue.toLocaleString()}</div>
+          <div class="caption" style="margin-top:6px;">Season title threshold</div>
+        </div>
+      </div>
+    `;
+    cutoffPanelEl.style.display = 'block';
+  } else {
+    cutoffPanelEl.style.display = 'none';
+  }
 }
 
 function renderCompanions(runs, trackedNames){
@@ -339,7 +365,7 @@ async function main(){
   const latestLabel = latestTimestamp.toLocaleString(undefined, {
     month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'
   });
-  subtitle.textContent = `Tracking ${characters.length} characters • last updated ${latestLabel}`;
+  subtitle.textContent = `Choking on ${characters.length} characters • last updated ${latestLabel}`;
 
   const dates = [...new Set(data.map(d => d.date))].sort();
   const cutoffHistory = Array.isArray(titleCutoffHistory) && titleCutoffHistory.length > 0
@@ -366,6 +392,7 @@ async function main(){
   }
 
   const datasets = characters.map((character, index) => {
+    const displayName = DISPLAY_NAMES[character.toLowerCase()] || character;
     const lookup = new Map();
     for(const point of data){
       if(point.character === character && Number.isFinite(Number(point.score))){
@@ -374,7 +401,7 @@ async function main(){
     }
 
     return {
-      label: character,
+      label: displayName,
       data: dates.map(date => lookup.get(date) ?? null),
       borderColor: CHART_COLORS[index % CHART_COLORS.length],
       backgroundColor: toRgba(CHART_COLORS[index % CHART_COLORS.length], 0.12),
