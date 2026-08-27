@@ -98,6 +98,15 @@
   .cutoff-panel .value{ font-size:24px; font-weight:700; color:var(--purple); }
   .cutoff-panel{ justify-content:center; }
   .cutoff-panel > div{ text-align:center; }
+  .coach-panel{
+    display:flex; justify-content:center; align-items:center;
+    background: linear-gradient(90deg, rgba(232,182,79,0.06), rgba(168,115,255,0.03));
+    border: 1px solid rgba(232,182,79,0.12);
+    padding: 12px 18px; border-radius: 12px; margin-top: 10px;
+  }
+  .coach-panel > div{ text-align:center; }
+  .coach-panel .coach-name{ font-size:32px; font-weight:800; color: var(--text-muted); letter-spacing:0.02em; }
+  .coach-panel .coach-score{ font-size:30px; font-weight:800; margin-top:6px; }
   canvas{ max-height: 360px; }
 
   .empty{
@@ -138,6 +147,7 @@
         <h1>Operation 100 Points Above</h1>
         <p class="sub" id="subtitle">Loading character data…</p>
         <div id="cutoffPanel" style="margin-top:18px; display:none;"></div>
+        <div id="coachPanel" style="margin-top:12px; display:none;"></div>
     </header>
 
     <div class="stat-row" id="statRow" style="display:none;">
@@ -260,7 +270,10 @@ function renderSummary(data, titleCutoffHistory){
   const latestCutoff = getLatestCutoff(titleCutoffHistory, data);
   const cutoffValue = latestCutoff ? latestCutoff.cutoff : null;
 
-  const charCards = characters.map((character, index) => {
+  // Exclude the coach (Zellaraa) from the stat card grid to avoid duplication
+  const statCharacters = characters.filter(c => c.toLowerCase() !== 'zellaraa');
+
+  const charCards = statCharacters.map((character, index) => {
     const displayName = DISPLAY_NAMES[character.toLowerCase()] || character;
     const latest = latestByCharacter.get(character) || {};
     const score = Number(latest.score ?? 0);
@@ -293,13 +306,50 @@ function renderSummary(data, titleCutoffHistory){
         <div style="width:100%">
           <div class="label">Title Cutoff</div>
           <div class="value">${cutoffValue.toLocaleString()}</div>
-          <div class="caption" style="margin-top:6px;">Season title threshold</div>
+          <div class="caption" style="margin-top:6px;">Score required to achieve dog</div>
         </div>
       </div>
     `;
     cutoffPanelEl.style.display = 'block';
   } else {
     cutoffPanelEl.style.display = 'none';
+  }
+
+  // Show a dedicated centered COACH cell (with score) if Zellaraa is being tracked.
+  const coachPanelEl = document.getElementById('coachPanel');
+  const hasCoach = characters.some(c => c.toLowerCase() === 'zellaraa');
+  if (hasCoach) {
+    const coachLabel = DISPLAY_NAMES['zellaraa'] || 'Zellaraa';
+    const coachData = latestByCharacter.get('Zellaraa') || {};
+    const coachScore = Number(coachData.score ?? 0);
+    const cutoff = cutoffValue ?? 0;
+    const gap = cutoff > 0 ? cutoff - coachScore : 0;
+    const gapLabel = cutoff > 0
+      ? (gap > 0 ? `${gap.toLocaleString()} to cutoff` : `${Math.abs(gap).toLocaleString()} above cutoff`)
+      : 'cutoff pending';
+
+    // meter width based on coach name length (fit to text length)
+    const meterWidth = Math.min(320, Math.max(120, (coachLabel.length || 6) * 14));
+    const percent = cutoff > 0 ? Math.max(0, Math.min(100, (coachScore / cutoff) * 100)) : 0;
+    const blue = CHART_COLORS[4] || '#7cc9ff';
+
+    coachPanelEl.innerHTML = `
+      <div class="coach-panel" role="note">
+        <div style="width:100%">
+          <div class="coach-name">${coachLabel}</div>
+          <div class="coach-score" style="color:${blue};">${coachScore.toLocaleString()}</div>
+          <div style="height:10px;margin-top:8px;display:flex;justify-content:center;">
+            <div style="width:${meterWidth}px; background:var(--surface-2); border:1px solid var(--line); border-radius:999px; overflow:hidden; display:inline-block;">
+              <div style="height:100%; width:${percent}%; background:linear-gradient(90deg, ${blue}, #e8b64f);"></div>
+            </div>
+          </div>
+          <div class="caption" style="margin-top:6px; text-align:center;">${gapLabel}</div>
+        </div>
+      </div>
+    `;
+    coachPanelEl.style.display = 'block';
+  } else {
+    coachPanelEl.style.display = 'none';
   }
 }
 
