@@ -117,6 +117,15 @@
     "score": 3249.7
   },
   {
+    "characterId": "us-mal-ganis-bawolstank",
+    "character": "Bawolstank",
+    "realm": "mal-ganis",
+    "region": "us",
+    "date": "2026-08-30",
+    "timestamp": "2026-08-30T11:32:30.769Z",
+    "score": 3249.7
+  },
+  {
     "characterId": "us-mal-ganis-doodypoop",
     "character": "Doodypoop",
     "realm": "mal-ganis",
@@ -232,6 +241,15 @@
     "date": "2026-08-29",
     "timestamp": "2026-08-30T04:30:41.150Z",
     "score": 2467.6
+  },
+  {
+    "characterId": "us-mal-ganis-doodypoop",
+    "character": "Doodypoop",
+    "realm": "mal-ganis",
+    "region": "us",
+    "date": "2026-08-30",
+    "timestamp": "2026-08-30T11:32:30.769Z",
+    "score": 2498.8
   },
   {
     "characterId": "us-mal-ganis-doodypoopy",
@@ -351,6 +369,15 @@
     "score": 2171.5
   },
   {
+    "characterId": "us-mal-ganis-doodypoopy",
+    "character": "Doodypoopy",
+    "realm": "mal-ganis",
+    "region": "us",
+    "date": "2026-08-30",
+    "timestamp": "2026-08-30T11:32:30.769Z",
+    "score": 2603.3
+  },
+  {
     "characterId": "us-mal-ganis-klittaurus",
     "character": "Klittaurus",
     "realm": "mal-ganis",
@@ -468,6 +495,15 @@
     "score": 3322.4
   },
   {
+    "characterId": "us-mal-ganis-klittaurus",
+    "character": "Klittaurus",
+    "realm": "mal-ganis",
+    "region": "us",
+    "date": "2026-08-30",
+    "timestamp": "2026-08-30T11:32:30.769Z",
+    "score": 3322.4
+  },
+  {
     "characterId": "us-sargeras-zellaraa",
     "character": "Zellaraa",
     "realm": "sargeras",
@@ -492,6 +528,15 @@
     "region": "us",
     "date": "2026-08-29",
     "timestamp": "2026-08-30T04:30:41.150Z",
+    "score": 2870.5
+  },
+  {
+    "characterId": "us-sargeras-zellaraa",
+    "character": "Zellaraa",
+    "realm": "sargeras",
+    "region": "us",
+    "date": "2026-08-30",
+    "timestamp": "2026-08-30T11:32:30.769Z",
     "score": 2870.5
   }
 ]
