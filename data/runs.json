@@ -4018,6 +4018,67 @@
     }
   },
   {
+    "id": 5983971,
+    "characterId": "us-mal-ganis-doodypoopy",
+    "character": "Doodypoopy",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Temple of Sethraliss",
+      "short_name": "TOS",
+      "mythic_level": 10,
+      "completed_at": "2026-08-30T04:01:33.000Z",
+      "clear_time_ms": 1505757,
+      "keystone_run_id": 5983971,
+      "par_time_ms": 1920999,
+      "num_keystone_upgrades": 2,
+      "map_challenge_mode_id": 250,
+      "zone_id": 9527,
+      "zone_expansion_id": 7,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_templeofsethraliss.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/temple-of-sethraliss.jpg",
+      "score": 328.1,
+      "affixes": [
+        {
+          "id": 158,
+          "name": "Xal'atath's Bargain: Voidbound",
+          "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
+          "icon": "inv_cosmicvoid_buff",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
+          "wowhead_url": "https://wowhead.com/affix=158"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/5983971-10-temple-of-sethraliss",
+      "spec": {
+        "id": 264,
+        "name": "Restoration",
+        "slug": "restoration",
+        "class_id": 7,
+        "role": "healer",
+        "is_melee": false,
+        "patch": "1.0.0",
+        "ordinal": 2
+      },
+      "role": "healer"
+    }
+  },
+  {
     "id": 5728848,
     "characterId": "us-mal-ganis-doodypoopy",
     "character": "Doodypoopy",
