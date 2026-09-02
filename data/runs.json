@@ -5114,5 +5114,310 @@
       },
       "role": "tank"
     }
+  },
+  {
+    "id": 6998230,
+    "characterId": "us-mal-ganis-doodypoop",
+    "character": "Doodypoop",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Voidscar Arena",
+      "short_name": "VSA",
+      "mythic_level": 12,
+      "completed_at": "2026-09-02T00:59:02.000Z",
+      "clear_time_ms": 1714244,
+      "keystone_run_id": 6998230,
+      "par_time_ms": 1800999,
+      "num_keystone_upgrades": 1,
+      "map_challenge_mode_id": 585,
+      "zone_id": 16425,
+      "zone_expansion_id": 11,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_voidscararena.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/voidscar-arena.jpg",
+      "score": 366.8,
+      "affixes": [
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 147,
+          "name": "Xal'atath's Guile",
+          "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+          "icon": "ability_racial_chillofnight",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+          "wowhead_url": "https://wowhead.com/affix=147"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/6998230-12-voidscar-arena",
+      "spec": {
+        "id": 581,
+        "name": "Vengeance",
+        "slug": "vengeance",
+        "class_id": 12,
+        "role": "tank",
+        "is_melee": true,
+        "patch": "7.0.0",
+        "ordinal": 1
+      },
+      "role": "tank"
+    }
+  },
+  {
+    "id": 7012903,
+    "characterId": "us-mal-ganis-klittaurus",
+    "character": "Klittaurus",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Kings' Rest",
+      "short_name": "KR",
+      "mythic_level": 17,
+      "completed_at": "2026-09-02T05:16:53.000Z",
+      "clear_time_ms": 1953522,
+      "keystone_run_id": 7012903,
+      "par_time_ms": 1980999,
+      "num_keystone_upgrades": 1,
+      "map_challenge_mode_id": 249,
+      "zone_id": 9526,
+      "zone_expansion_id": 7,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_kingsrest.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/kings-rest.jpg",
+      "score": 440.5,
+      "affixes": [
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 147,
+          "name": "Xal'atath's Guile",
+          "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+          "icon": "ability_racial_chillofnight",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+          "wowhead_url": "https://wowhead.com/affix=147"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/7012903-17-kings-rest",
+      "spec": {
+        "id": 250,
+        "name": "Blood",
+        "slug": "blood",
+        "class_id": 6,
+        "role": "tank",
+        "is_melee": true,
+        "patch": "3.0.0",
+        "ordinal": 0
+      },
+      "role": "tank"
+    }
+  },
+  {
+    "id": 7025208,
+    "characterId": "us-sargeras-zellaraa",
+    "character": "Zellaraa",
+    "realm": "sargeras",
+    "region": "us",
+    "run": {
+      "dungeon": "Den of Nalorakk",
+      "short_name": "DON",
+      "mythic_level": 16,
+      "completed_at": "2026-09-02T06:09:30.000Z",
+      "clear_time_ms": 1642383,
+      "keystone_run_id": 7025208,
+      "par_time_ms": 1920999,
+      "num_keystone_upgrades": 1,
+      "map_challenge_mode_id": 586,
+      "zone_id": 16368,
+      "zone_expansion_id": 11,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_proveyourworth.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/den-of-nalorakk.jpg",
+      "score": 430.4,
+      "affixes": [
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 147,
+          "name": "Xal'atath's Guile",
+          "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+          "icon": "ability_racial_chillofnight",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+          "wowhead_url": "https://wowhead.com/affix=147"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/7025208-16-den-of-nalorakk",
+      "spec": {
+        "id": 250,
+        "name": "Blood",
+        "slug": "blood",
+        "class_id": 6,
+        "role": "tank",
+        "is_melee": true,
+        "patch": "3.0.0",
+        "ordinal": 0
+      },
+      "role": "tank"
+    }
+  },
+  {
+    "id": 7036987,
+    "characterId": "us-sargeras-zellaraa",
+    "character": "Zellaraa",
+    "realm": "sargeras",
+    "region": "us",
+    "run": {
+      "dungeon": "Altar of Fangs",
+      "short_name": "AOF",
+      "mythic_level": 15,
+      "completed_at": "2026-09-02T07:18:59.000Z",
+      "clear_time_ms": 1493047,
+      "keystone_run_id": 7036987,
+      "par_time_ms": 1800999,
+      "num_keystone_upgrades": 1,
+      "map_challenge_mode_id": 588,
+      "zone_id": 16865,
+      "zone_expansion_id": 11,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_altaroffangs.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/altar-of-fangs.jpg",
+      "score": 416.4,
+      "affixes": [
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 147,
+          "name": "Xal'atath's Guile",
+          "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+          "icon": "ability_racial_chillofnight",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+          "wowhead_url": "https://wowhead.com/affix=147"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/7036987-15-altar-of-fangs",
+      "spec": {
+        "id": 250,
+        "name": "Blood",
+        "slug": "blood",
+        "class_id": 6,
+        "role": "tank",
+        "is_melee": true,
+        "patch": "3.0.0",
+        "ordinal": 0
+      },
+      "role": "tank"
+    }
+  },
+  {
+    "id": 7046555,
+    "characterId": "us-sargeras-zellaraa",
+    "character": "Zellaraa",
+    "realm": "sargeras",
+    "region": "us",
+    "run": {
+      "dungeon": "Murder Row",
+      "short_name": "MR",
+      "mythic_level": 16,
+      "completed_at": "2026-09-02T08:02:22.000Z",
+      "clear_time_ms": 2341671,
+      "keystone_run_id": 7046555,
+      "par_time_ms": 2040999,
+      "num_keystone_upgrades": 0,
+      "map_challenge_mode_id": 587,
+      "zone_id": 16091,
+      "zone_expansion_id": 11,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_murderrow.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/murder-row.jpg",
+      "score": 314.5,
+      "affixes": [
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 147,
+          "name": "Xal'atath's Guile",
+          "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+          "icon": "ability_racial_chillofnight",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+          "wowhead_url": "https://wowhead.com/affix=147"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/7046555-16-murder-row",
+      "spec": {
+        "id": 250,
+        "name": "Blood",
+        "slug": "blood",
+        "class_id": 6,
+        "role": "tank",
+        "is_melee": true,
+        "patch": "3.0.0",
+        "ordinal": 0
+      },
+      "role": "tank"
+    }
   }
 ]
