@@ -31,7 +31,7 @@ const CHARACTERS = [
   { name: "Doodypoop", realm: "mal-ganis", region: "us" },
   { name: "Doodypoopy", realm: "mal-ganis", region: "us" },
   { name: "Bawolstank", realm: "mal-ganis", region: "us" },
-  { name: "Klittaurus", realm: "mal-ganis", region: "us" },
+  { name: "Doodyysoup", realm: "mal-ganis", region: "us" },
   // Add Zellaraa on Sargeras
   { name: "Zellaraa", realm: "sargeras", region: "us" }
 ];

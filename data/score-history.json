@@ -94,15 +94,6 @@
     "character": "Bawolstank",
     "realm": "mal-ganis",
     "region": "us",
-    "date": "2026-08-27",
-    "timestamp": "2026-08-27T18:33:13.307Z",
-    "score": 3249.7
-  },
-  {
-    "characterId": "us-mal-ganis-bawolstank",
-    "character": "Bawolstank",
-    "realm": "mal-ganis",
-    "region": "us",
     "date": "2026-08-28",
     "timestamp": "2026-08-29T03:06:26.005Z",
     "score": 3249.7
@@ -249,15 +240,6 @@
     "region": "us",
     "date": "2026-08-27",
     "timestamp": "2026-08-28T05:09:03.590Z",
-    "score": 2127.2
-  },
-  {
-    "characterId": "us-mal-ganis-doodypoop",
-    "character": "Doodypoop",
-    "realm": "mal-ganis",
-    "region": "us",
-    "date": "2026-08-27",
-    "timestamp": "2026-08-27T18:33:13.307Z",
     "score": 2127.2
   },
   {
@@ -418,15 +400,6 @@
     "character": "Doodypoopy",
     "realm": "mal-ganis",
     "region": "us",
-    "date": "2026-08-27",
-    "timestamp": "2026-08-27T18:33:13.307Z",
-    "score": 2171.5
-  },
-  {
-    "characterId": "us-mal-ganis-doodypoopy",
-    "character": "Doodypoopy",
-    "realm": "mal-ganis",
-    "region": "us",
     "date": "2026-08-28",
     "timestamp": "2026-08-29T03:06:26.005Z",
     "score": 2171.5
@@ -486,8 +459,8 @@
     "score": 3017.8
   },
   {
-    "characterId": "us-mal-ganis-klittaurus",
-    "character": "Klittaurus",
+    "characterId": "us-mal-ganis-doodyysoup",
+    "character": "Doodyysoup",
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-08-18",
@@ -495,8 +468,8 @@
     "score": 1520.8
   },
   {
-    "characterId": "us-mal-ganis-klittaurus",
-    "character": "Klittaurus",
+    "characterId": "us-mal-ganis-doodyysoup",
+    "character": "Doodyysoup",
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-08-19",
@@ -504,8 +477,8 @@
     "score": 2773
   },
   {
-    "characterId": "us-mal-ganis-klittaurus",
-    "character": "Klittaurus",
+    "characterId": "us-mal-ganis-doodyysoup",
+    "character": "Doodyysoup",
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-08-20",
@@ -513,8 +486,8 @@
     "score": 2893
   },
   {
-    "characterId": "us-mal-ganis-klittaurus",
-    "character": "Klittaurus",
+    "characterId": "us-mal-ganis-doodyysoup",
+    "character": "Doodyysoup",
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-08-21",
@@ -522,8 +495,8 @@
     "score": 3106.7
   },
   {
-    "characterId": "us-mal-ganis-klittaurus",
-    "character": "Klittaurus",
+    "characterId": "us-mal-ganis-doodyysoup",
+    "character": "Doodyysoup",
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-08-22",
@@ -531,8 +504,8 @@
     "score": 3173.1
   },
   {
-    "characterId": "us-mal-ganis-klittaurus",
-    "character": "Klittaurus",
+    "characterId": "us-mal-ganis-doodyysoup",
+    "character": "Doodyysoup",
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-08-23",
@@ -540,8 +513,8 @@
     "score": 3215.8
   },
   {
-    "characterId": "us-mal-ganis-klittaurus",
-    "character": "Klittaurus",
+    "characterId": "us-mal-ganis-doodyysoup",
+    "character": "Doodyysoup",
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-08-24",
@@ -549,8 +522,8 @@
     "score": 3238
   },
   {
-    "characterId": "us-mal-ganis-klittaurus",
-    "character": "Klittaurus",
+    "characterId": "us-mal-ganis-doodyysoup",
+    "character": "Doodyysoup",
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-08-25",
@@ -558,8 +531,8 @@
     "score": 3238
   },
   {
-    "characterId": "us-mal-ganis-klittaurus",
-    "character": "Klittaurus",
+    "characterId": "us-mal-ganis-doodyysoup",
+    "character": "Doodyysoup",
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-08-26",
@@ -567,8 +540,8 @@
     "score": 3238
   },
   {
-    "characterId": "us-mal-ganis-klittaurus",
-    "character": "Klittaurus",
+    "characterId": "us-mal-ganis-doodyysoup",
+    "character": "Doodyysoup",
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-08-27",
@@ -576,17 +549,8 @@
     "score": 3263.6
   },
   {
-    "characterId": "us-mal-ganis-klittaurus",
-    "character": "Klittaurus",
-    "realm": "mal-ganis",
-    "region": "us",
-    "date": "2026-08-27",
-    "timestamp": "2026-08-27T18:33:13.307Z",
-    "score": 3238
-  },
-  {
-    "characterId": "us-mal-ganis-klittaurus",
-    "character": "Klittaurus",
+    "characterId": "us-mal-ganis-doodyysoup",
+    "character": "Doodyysoup",
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-08-28",
@@ -594,8 +558,8 @@
     "score": 3322.4
   },
   {
-    "characterId": "us-mal-ganis-klittaurus",
-    "character": "Klittaurus",
+    "characterId": "us-mal-ganis-doodyysoup",
+    "character": "Doodyysoup",
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-08-29",
@@ -603,8 +567,8 @@
     "score": 3322.4
   },
   {
-    "characterId": "us-mal-ganis-klittaurus",
-    "character": "Klittaurus",
+    "characterId": "us-mal-ganis-doodyysoup",
+    "character": "Doodyysoup",
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-08-30",
@@ -612,8 +576,8 @@
     "score": 3322.4
   },
   {
-    "characterId": "us-mal-ganis-klittaurus",
-    "character": "Klittaurus",
+    "characterId": "us-mal-ganis-doodyysoup",
+    "character": "Doodyysoup",
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-08-31",
@@ -621,8 +585,8 @@
     "score": 3361
   },
   {
-    "characterId": "us-mal-ganis-klittaurus",
-    "character": "Klittaurus",
+    "characterId": "us-mal-ganis-doodyysoup",
+    "character": "Doodyysoup",
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-09-01",
@@ -630,8 +594,8 @@
     "score": 3361
   },
   {
-    "characterId": "us-mal-ganis-klittaurus",
-    "character": "Klittaurus",
+    "characterId": "us-mal-ganis-doodyysoup",
+    "character": "Doodyysoup",
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-09-02",
@@ -639,8 +603,8 @@
     "score": 3389.8
   },
   {
-    "characterId": "us-mal-ganis-klittaurus",
-    "character": "Klittaurus",
+    "characterId": "us-mal-ganis-doodyysoup",
+    "character": "Doodyysoup",
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-09-03",
