@@ -10782,5 +10782,188 @@
       },
       "role": "tank"
     }
+  },
+  {
+    "id": 11923535,
+    "characterId": "us-mal-ganis-doodypoopy",
+    "character": "Doodypoopy",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Den of Nalorakk",
+      "short_name": "DON",
+      "mythic_level": 10,
+      "completed_at": "2026-09-13T18:30:43.000Z",
+      "clear_time_ms": 1428368,
+      "keystone_run_id": 11923535,
+      "par_time_ms": 1920999,
+      "num_keystone_upgrades": 2,
+      "map_challenge_mode_id": 586,
+      "zone_id": 16368,
+      "zone_expansion_id": 11,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_proveyourworth.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/den-of-nalorakk.jpg",
+      "score": 329.6,
+      "affixes": [
+        {
+          "id": 162,
+          "name": "Xal'atath's Bargain: Pulsar",
+          "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+          "icon": "inv_cosmicvoid_nova",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+          "wowhead_url": "https://wowhead.com/affix=162"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/11923535-10-den-of-nalorakk",
+      "spec": {
+        "id": 264,
+        "name": "Restoration",
+        "slug": "restoration",
+        "class_id": 7,
+        "role": "healer",
+        "is_melee": false,
+        "patch": "1.0.0",
+        "ordinal": 2
+      },
+      "role": "healer"
+    }
+  },
+  {
+    "id": 11924363,
+    "characterId": "us-mal-ganis-doodypoop",
+    "character": "Doodypoop",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Murder Row",
+      "short_name": "MR",
+      "mythic_level": 10,
+      "completed_at": "2026-09-13T19:02:39.000Z",
+      "clear_time_ms": 1089328,
+      "keystone_run_id": 11924363,
+      "par_time_ms": 2040999,
+      "num_keystone_upgrades": 3,
+      "map_challenge_mode_id": 587,
+      "zone_id": 16091,
+      "zone_expansion_id": 11,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_murderrow.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/murder-row.jpg",
+      "score": 335,
+      "affixes": [
+        {
+          "id": 162,
+          "name": "Xal'atath's Bargain: Pulsar",
+          "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+          "icon": "inv_cosmicvoid_nova",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+          "wowhead_url": "https://wowhead.com/affix=162"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/11924363-10-murder-row",
+      "spec": {
+        "id": 581,
+        "name": "Vengeance",
+        "slug": "vengeance",
+        "class_id": 12,
+        "role": "tank",
+        "is_melee": true,
+        "patch": "7.0.0",
+        "ordinal": 1
+      },
+      "role": "tank"
+    }
+  },
+  {
+    "id": 11903591,
+    "characterId": "us-mal-ganis-doodypoop",
+    "character": "Doodypoop",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Murder Row",
+      "short_name": "MR",
+      "mythic_level": 11,
+      "completed_at": "2026-09-13T19:26:30.000Z",
+      "clear_time_ms": 1113840,
+      "keystone_run_id": 11903591,
+      "par_time_ms": 2040999,
+      "num_keystone_upgrades": 3,
+      "map_challenge_mode_id": 587,
+      "zone_id": 16091,
+      "zone_expansion_id": 11,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_murderrow.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/murder-row.jpg",
+      "score": 350,
+      "affixes": [
+        {
+          "id": 162,
+          "name": "Xal'atath's Bargain: Pulsar",
+          "description": "While in combat, Xal'atath summons pulsars that orbit players.",
+          "icon": "inv_cosmicvoid_nova",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_nova.jpg",
+          "wowhead_url": "https://wowhead.com/affix=162"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/11903591-11-murder-row",
+      "spec": {
+        "id": 581,
+        "name": "Vengeance",
+        "slug": "vengeance",
+        "class_id": 12,
+        "role": "tank",
+        "is_melee": true,
+        "patch": "7.0.0",
+        "ordinal": 1
+      },
+      "role": "tank"
+    }
   }
 ]
