@@ -11943,6 +11943,67 @@
     }
   },
   {
+    "id": 13055323,
+    "characterId": "us-mal-ganis-doodypoopy",
+    "character": "Doodypoopy",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Kings' Rest",
+      "short_name": "KR",
+      "mythic_level": 10,
+      "completed_at": "2026-09-17T01:09:38.000Z",
+      "clear_time_ms": 1271763,
+      "keystone_run_id": 13055323,
+      "par_time_ms": 1980999,
+      "num_keystone_upgrades": 2,
+      "map_challenge_mode_id": 249,
+      "zone_id": 9526,
+      "zone_expansion_id": 7,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_kingsrest.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/kings-rest.jpg",
+      "score": 333.4,
+      "affixes": [
+        {
+          "id": 148,
+          "name": "Xal'atath's Bargain: Ascendant",
+          "description": "While in combat, Xal'atath rains down orbs of cosmic energy that empower enemies or players.",
+          "icon": "inv_nullstone_cosmicvoid",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_nullstone_cosmicvoid.jpg",
+          "wowhead_url": "https://wowhead.com/affix=148"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/13055323-10-kings-rest",
+      "spec": {
+        "id": 264,
+        "name": "Restoration",
+        "slug": "restoration",
+        "class_id": 7,
+        "role": "healer",
+        "is_melee": false,
+        "patch": "1.0.0",
+        "ordinal": 2
+      },
+      "role": "healer"
+    }
+  },
+  {
     "id": 13015854,
     "characterId": "us-mal-ganis-doodypoopy",
     "character": "Doodypoopy",
@@ -12062,6 +12123,128 @@
         "ordinal": 2
       },
       "role": "healer"
+    }
+  },
+  {
+    "id": 13078839,
+    "characterId": "us-mal-ganis-doodyysoup",
+    "character": "Doodyysoup",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Temple of Sethraliss",
+      "short_name": "TOS",
+      "mythic_level": 18,
+      "completed_at": "2026-09-17T10:47:38.000Z",
+      "clear_time_ms": 1889141,
+      "keystone_run_id": 13078839,
+      "par_time_ms": 1920999,
+      "num_keystone_upgrades": 1,
+      "map_challenge_mode_id": 250,
+      "zone_id": 9527,
+      "zone_expansion_id": 7,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_templeofsethraliss.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/temple-of-sethraliss.jpg",
+      "score": 455.6,
+      "affixes": [
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 147,
+          "name": "Xal'atath's Guile",
+          "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+          "icon": "ability_racial_chillofnight",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+          "wowhead_url": "https://wowhead.com/affix=147"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/13078839-18-temple-of-sethraliss",
+      "spec": {
+        "id": 250,
+        "name": "Blood",
+        "slug": "blood",
+        "class_id": 6,
+        "role": "tank",
+        "is_melee": true,
+        "patch": "3.0.0",
+        "ordinal": 0
+      },
+      "role": "tank"
+    }
+  },
+  {
+    "id": 13079743,
+    "characterId": "us-mal-ganis-doodypoop",
+    "character": "Doodypoop",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Kings' Rest",
+      "short_name": "KR",
+      "mythic_level": 12,
+      "completed_at": "2026-09-17T11:48:14.000Z",
+      "clear_time_ms": 1621970,
+      "keystone_run_id": 13079743,
+      "par_time_ms": 1980999,
+      "num_keystone_upgrades": 1,
+      "map_challenge_mode_id": 249,
+      "zone_id": 9526,
+      "zone_expansion_id": 7,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_kingsrest.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/kings-rest.jpg",
+      "score": 371.8,
+      "affixes": [
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 147,
+          "name": "Xal'atath's Guile",
+          "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+          "icon": "ability_racial_chillofnight",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+          "wowhead_url": "https://wowhead.com/affix=147"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/13079743-12-kings-rest",
+      "spec": {
+        "id": 577,
+        "name": "Havoc",
+        "slug": "havoc",
+        "class_id": 12,
+        "role": "dps",
+        "is_melee": true,
+        "patch": "7.0.0",
+        "ordinal": 0
+      },
+      "role": "dps"
     }
   }
 ]
