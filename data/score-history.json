@@ -360,6 +360,15 @@
     "score": 3322.9
   },
   {
+    "characterId": "us-mal-ganis-bawolstank",
+    "character": "Bawolstank",
+    "realm": "mal-ganis",
+    "region": "us",
+    "date": "2026-09-27",
+    "timestamp": "2026-09-27T11:41:39.367Z",
+    "score": 3322.9
+  },
+  {
     "characterId": "us-mal-ganis-doodypoop",
     "character": "Doodypoop",
     "realm": "mal-ganis",
@@ -718,6 +727,15 @@
     "date": "2026-09-26",
     "timestamp": "2026-09-27T04:28:11.778Z",
     "score": 3254.3
+  },
+  {
+    "characterId": "us-mal-ganis-doodypoop",
+    "character": "Doodypoop",
+    "realm": "mal-ganis",
+    "region": "us",
+    "date": "2026-09-27",
+    "timestamp": "2026-09-27T11:41:39.367Z",
+    "score": 3281.8
   },
   {
     "characterId": "us-mal-ganis-doodypoopy",
@@ -1080,6 +1098,15 @@
     "score": 3696.3
   },
   {
+    "characterId": "us-mal-ganis-doodypoopy",
+    "character": "Doodypoopy",
+    "realm": "mal-ganis",
+    "region": "us",
+    "date": "2026-09-27",
+    "timestamp": "2026-09-27T11:41:39.367Z",
+    "score": 3709.4
+  },
+  {
     "characterId": "us-mal-ganis-doodyysoup",
     "character": "Doodyysoup",
     "realm": "mal-ganis",
@@ -1440,6 +1467,15 @@
     "score": 3650.9
   },
   {
+    "characterId": "us-mal-ganis-doodyysoup",
+    "character": "Doodyysoup",
+    "realm": "mal-ganis",
+    "region": "us",
+    "date": "2026-09-27",
+    "timestamp": "2026-09-27T11:41:39.367Z",
+    "score": 3650.9
+  },
+  {
     "characterId": "us-sargeras-zellaraa",
     "character": "Zellaraa",
     "realm": "sargeras",
@@ -1716,6 +1752,15 @@
     "region": "us",
     "date": "2026-09-26",
     "timestamp": "2026-09-27T04:28:11.778Z",
+    "score": 3580.8
+  },
+  {
+    "characterId": "us-sargeras-zellaraa",
+    "character": "Zellaraa",
+    "realm": "sargeras",
+    "region": "us",
+    "date": "2026-09-27",
+    "timestamp": "2026-09-27T11:41:39.367Z",
     "score": 3580.8
   }
 ]
