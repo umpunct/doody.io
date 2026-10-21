@@ -18529,5 +18529,363 @@
       },
       "role": "tank"
     }
+  },
+  {
+    "id": 22046098,
+    "characterId": "us-mal-ganis-doodypoop",
+    "character": "Doodypoop",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Temple of Sethraliss",
+      "short_name": "TOS",
+      "mythic_level": 10,
+      "completed_at": "2026-10-21T18:04:55.000Z",
+      "clear_time_ms": 664893,
+      "keystone_run_id": 22046098,
+      "par_time_ms": 1920999,
+      "num_keystone_upgrades": 3,
+      "map_challenge_mode_id": 250,
+      "zone_id": 9527,
+      "zone_expansion_id": 7,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_templeofsethraliss.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/temple-of-sethraliss.jpg",
+      "score": 335,
+      "affixes": [
+        {
+          "id": 158,
+          "name": "Xal'atath's Bargain: Voidbound",
+          "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
+          "icon": "inv_cosmicvoid_buff",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
+          "wowhead_url": "https://wowhead.com/affix=158"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/22046098-10-temple-of-sethraliss",
+      "spec": {
+        "id": 581,
+        "name": "Vengeance",
+        "slug": "vengeance",
+        "class_id": 12,
+        "role": "tank",
+        "is_melee": true,
+        "patch": "7.0.0",
+        "ordinal": 1
+      },
+      "role": "tank"
+    }
+  },
+  {
+    "id": 22048340,
+    "characterId": "us-mal-ganis-doodypoop",
+    "character": "Doodypoop",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Murder Row",
+      "short_name": "MR",
+      "mythic_level": 10,
+      "completed_at": "2026-10-21T18:18:25.000Z",
+      "clear_time_ms": 666554,
+      "keystone_run_id": 22048340,
+      "par_time_ms": 2040999,
+      "num_keystone_upgrades": 3,
+      "map_challenge_mode_id": 587,
+      "zone_id": 16091,
+      "zone_expansion_id": 11,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_murderrow.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/murder-row.jpg",
+      "score": 335,
+      "affixes": [
+        {
+          "id": 158,
+          "name": "Xal'atath's Bargain: Voidbound",
+          "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
+          "icon": "inv_cosmicvoid_buff",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
+          "wowhead_url": "https://wowhead.com/affix=158"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/22048340-10-murder-row",
+      "spec": {
+        "id": 581,
+        "name": "Vengeance",
+        "slug": "vengeance",
+        "class_id": 12,
+        "role": "tank",
+        "is_melee": true,
+        "patch": "7.0.0",
+        "ordinal": 1
+      },
+      "role": "tank"
+    }
+  },
+  {
+    "id": 22072306,
+    "characterId": "us-mal-ganis-doodypoop",
+    "character": "Doodypoop",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Ruby Life Pools",
+      "short_name": "RLP",
+      "mythic_level": 10,
+      "completed_at": "2026-10-21T19:22:17.000Z",
+      "clear_time_ms": 579988,
+      "keystone_run_id": 22072306,
+      "par_time_ms": 1680999,
+      "num_keystone_upgrades": 3,
+      "map_challenge_mode_id": 399,
+      "zone_id": 14063,
+      "zone_expansion_id": 9,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_lifepools.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion9/base/ruby-life-pools.jpg",
+      "score": 335,
+      "affixes": [
+        {
+          "id": 158,
+          "name": "Xal'atath's Bargain: Voidbound",
+          "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
+          "icon": "inv_cosmicvoid_buff",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
+          "wowhead_url": "https://wowhead.com/affix=158"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/22072306-10-ruby-life-pools",
+      "spec": {
+        "id": 581,
+        "name": "Vengeance",
+        "slug": "vengeance",
+        "class_id": 12,
+        "role": "tank",
+        "is_melee": true,
+        "patch": "7.0.0",
+        "ordinal": 1
+      },
+      "role": "tank"
+    }
+  },
+  {
+    "id": 22065190,
+    "characterId": "us-mal-ganis-doodypoop",
+    "character": "Doodypoop",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Kings' Rest",
+      "short_name": "KR",
+      "mythic_level": 10,
+      "completed_at": "2026-10-21T19:40:01.000Z",
+      "clear_time_ms": 875748,
+      "keystone_run_id": 22065190,
+      "par_time_ms": 1980999,
+      "num_keystone_upgrades": 3,
+      "map_challenge_mode_id": 249,
+      "zone_id": 9526,
+      "zone_expansion_id": 7,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_kingsrest.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/kings-rest.jpg",
+      "score": 335,
+      "affixes": [
+        {
+          "id": 158,
+          "name": "Xal'atath's Bargain: Voidbound",
+          "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
+          "icon": "inv_cosmicvoid_buff",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
+          "wowhead_url": "https://wowhead.com/affix=158"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/22065190-10-kings-rest",
+      "spec": {
+        "id": 581,
+        "name": "Vengeance",
+        "slug": "vengeance",
+        "class_id": 12,
+        "role": "tank",
+        "is_melee": true,
+        "patch": "7.0.0",
+        "ordinal": 1
+      },
+      "role": "tank"
+    }
+  },
+  {
+    "id": 22067067,
+    "characterId": "us-mal-ganis-doodypoop",
+    "character": "Doodypoop",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Ruby Life Pools",
+      "short_name": "RLP",
+      "mythic_level": 9,
+      "completed_at": "2026-10-21T19:58:10.000Z",
+      "clear_time_ms": 494551,
+      "keystone_run_id": 22067067,
+      "par_time_ms": 1680999,
+      "num_keystone_upgrades": 3,
+      "map_challenge_mode_id": 399,
+      "zone_id": 14063,
+      "zone_expansion_id": 9,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_lifepools.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion9/base/ruby-life-pools.jpg",
+      "score": 305,
+      "affixes": [
+        {
+          "id": 158,
+          "name": "Xal'atath's Bargain: Voidbound",
+          "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
+          "icon": "inv_cosmicvoid_buff",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
+          "wowhead_url": "https://wowhead.com/affix=158"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/22067067-9-ruby-life-pools",
+      "spec": {
+        "id": 581,
+        "name": "Vengeance",
+        "slug": "vengeance",
+        "class_id": 12,
+        "role": "tank",
+        "is_melee": true,
+        "patch": "7.0.0",
+        "ordinal": 1
+      },
+      "role": "tank"
+    }
+  },
+  {
+    "id": 22072392,
+    "characterId": "us-mal-ganis-doodyysoup",
+    "character": "Doodyysoup",
+    "realm": "mal-ganis",
+    "region": "us",
+    "run": {
+      "dungeon": "Temple of Sethraliss",
+      "short_name": "TOS",
+      "mythic_level": 10,
+      "completed_at": "2026-10-21T20:43:53.000Z",
+      "clear_time_ms": 699811,
+      "keystone_run_id": 22072392,
+      "par_time_ms": 1920999,
+      "num_keystone_upgrades": 3,
+      "map_challenge_mode_id": 250,
+      "zone_id": 9527,
+      "zone_expansion_id": 7,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_templeofsethraliss.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion7/base/temple-of-sethraliss.jpg",
+      "score": 335,
+      "affixes": [
+        {
+          "id": 158,
+          "name": "Xal'atath's Bargain: Voidbound",
+          "description": "While in combat, Xal'atath summons a Voidbound Emissary that empowers nearby enemies.",
+          "icon": "inv_cosmicvoid_buff",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_cosmicvoid_buff.jpg",
+          "wowhead_url": "https://wowhead.com/affix=158"
+        },
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-2/22072392-10-temple-of-sethraliss",
+      "spec": {
+        "id": 250,
+        "name": "Blood",
+        "slug": "blood",
+        "class_id": 6,
+        "role": "tank",
+        "is_melee": true,
+        "patch": "3.0.0",
+        "ordinal": 0
+      },
+      "role": "tank"
+    }
   }
 ]
