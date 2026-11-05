@@ -707,7 +707,7 @@
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-11-04",
-    "timestamp": "2026-11-04T19:31:12.121Z",
+    "timestamp": "2026-11-05T01:22:03.003Z",
     "score": 3322.9
   },
   {
@@ -1418,7 +1418,7 @@
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-11-04",
-    "timestamp": "2026-11-04T19:31:12.121Z",
+    "timestamp": "2026-11-05T01:22:03.003Z",
     "score": 3546.6
   },
   {
@@ -2129,7 +2129,7 @@
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-11-04",
-    "timestamp": "2026-11-04T19:31:12.121Z",
+    "timestamp": "2026-11-05T01:22:03.003Z",
     "score": 3890.6
   },
   {
@@ -2840,8 +2840,8 @@
     "realm": "mal-ganis",
     "region": "us",
     "date": "2026-11-04",
-    "timestamp": "2026-11-04T19:31:12.121Z",
-    "score": 3907.6
+    "timestamp": "2026-11-05T01:22:03.003Z",
+    "score": 3923.4
   },
   {
     "characterId": "us-sargeras-zellaraa",
@@ -3470,7 +3470,7 @@
     "realm": "sargeras",
     "region": "us",
     "date": "2026-11-04",
-    "timestamp": "2026-11-04T19:31:12.121Z",
+    "timestamp": "2026-11-05T01:22:03.003Z",
     "score": 3658.6
   }
 ]
